@@ -6,7 +6,6 @@ export default injectSheet({
     padding: '30px 50px',
   },
   BrandTitle: {
-    color: 'white',
     fontSize: '1.2em',
     display: 'inline-block',
   },

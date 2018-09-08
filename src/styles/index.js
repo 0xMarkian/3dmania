@@ -1,7 +1,8 @@
 export default {
   baseColor: '#242424',
+  baseFontColor: 'white',
   baseFontSize: '18px',
   defaultSection: {
-    padding: '5%',
+    padding: '10% 15%',
   },
 }

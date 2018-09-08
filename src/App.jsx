@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
-import PoppinsFont from 'fonts/Poppins/Poppins-Light.ttf'
+import PoppinsFontLight from 'fonts/Poppins/Poppins-Light.ttf'
+import PoppinsFontSemiBold from 'fonts/Poppins/Poppins-SemiBold.ttf'
 
 import Nav from 'components/Nav';
 import Header from 'components/Header'
@@ -11,8 +12,12 @@ import Header from 'components/Header'
     '@font-face': {
         fontFamily: 'Poppins',
         fontWeight: 'normal',
-        fontStyle: 'normal',
-        src: `url(${PoppinsFont}) format("opentype")`,
+        src: `url(${PoppinsFontLight}) format("opentype")`,
+    },
+    '@font-face': {
+        fontFamily: 'PoppinsBold',
+        fontWeight: 900,
+        src: `url(${PoppinsFontSemiBold}) format("opentype")`,
     },
     '*': {
       boxSizing: 'border-box',
@@ -31,6 +36,7 @@ import Header from 'components/Header'
   App: {
     fontFamily: 'Poppins',
     fontSize: commonStyles.baseFontSize,
+    color: commonStyles.baseFontColor,
     background: commonStyles.baseColor,
     overflow: 'auto',
     position: 'relative',
