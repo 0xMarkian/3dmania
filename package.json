@@ -42,7 +42,8 @@
     "react-dom": "16.4.2",
     "react-hot-loader": "4.3.4",
     "react-jss": "^8.6.1",
-    "reactstrap": "^6.4.0"
+    "reactstrap": "^6.4.0",
+    "whatwg-fetch": "^2.0.4"
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"

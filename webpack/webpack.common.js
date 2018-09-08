@@ -49,5 +49,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: commonPaths.templatePath,
     }),
+    new webpack.ProvidePlugin({
+      React: 'react',
+      injectSheet: 'react-jss',
+      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+    }),
   ],
 };
