@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
-import injectSheet from 'react-jss'
-import defaultStyles from './styles'
-import 'normalize.css'
+import injectSheet from 'react-jss';
+import { Button } from 'reactstrap';
+import defaultStyles from './styles';
 
-import Nav from './components/Nav/'
-
+import Nav from './components/Nav';
 
 @injectSheet({
   '@global': {
@@ -14,15 +13,15 @@ import Nav from './components/Nav/'
       boxSizing: 'border-box',
       position: 'relative',
     },
-    'body':{
+    body: {
       margin: 0,
-    }
+    },
   },
   App: {
     background: defaultStyles.baseColor,
     overflow: 'auto',
     position: 'relative',
-  }
+  },
 })
 class App extends Component {
   constructor(props) {
@@ -31,13 +30,14 @@ class App extends Component {
   }
 
   render() {
-    const { classes } = this.props
+    const { classes } = this.props;
 
     return (
       <div className={classes.App}>
-        <Nav/>
+        <Nav />
+        <Button color="primary">test</Button>
       </div>
-    )
+    );
   }
 }
 
