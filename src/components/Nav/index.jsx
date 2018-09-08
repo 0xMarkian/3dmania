@@ -1,4 +1,3 @@
-console.log(injectSheet)
 export default injectSheet({
   Nav: {
     width: '100%',
