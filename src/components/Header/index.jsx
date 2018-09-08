@@ -3,10 +3,15 @@ export default injectSheet({
   ContentWrapper: {
     
   },
+  Heading: {
+    fontSize: '3em',
+  },
 })(
   ({ classes }) => (
     <header >
-      <div className={ContentWrapper} />
+      <div className={classes.ContentWrapper}>
+        <h1 className={classes.Heading}>Creating connections that count</h1>
+      </div>
     </header>
   )
 )
