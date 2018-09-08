@@ -1,37 +1,15 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
-import PoppinsFont from 'fonts/Poppins/Poppins-Light.ttf'
-
 import Nav from 'components/Nav';
 import Header from 'components/Header'
 import ProcessSection from 'components/ProcessSection'
 
 @injectSheet({
-  '@global': {
-    '@font-face': {
-        fontFamily: 'Poppins',
-        fontWeight: 'normal',
-        fontStyle: 'normal',
-        src: `url(${PoppinsFont}) format("opentype")`,
-    },
-    '*': {
-      boxSizing: 'border-box',
-      position: 'relative',
-    },
-    a: {
-      textDecoration: 'none',
-      '&:hover': {
-        textDecoration: 'none',
-      },
-    },
-    body: {
-      margin: 0,
-    },
-  },
   App: {
     fontFamily: 'Poppins',
     fontSize: commonStyles.baseFontSize,
+    color: commonStyles.baseFontColor,
     background: commonStyles.baseColor,
     overflow: 'auto',
     position: 'relative',

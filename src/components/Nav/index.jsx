@@ -1,12 +1,12 @@
 export default injectSheet({
   Nav: {
     width: '100%',
-    background: commonStyles.baseColor,
+    zIndex: 2,
+    background: 'rgba(36, 36, 36, 0.8)',
     position: 'fixed',
-    padding: '30px 50px',
+    padding: '25px 50px',
   },
   BrandTitle: {
-    color: 'white',
     fontSize: '1.2em',
     display: 'inline-block',
   },
@@ -22,7 +22,6 @@ export default injectSheet({
       color: 'white',
     },
   },
-
 })(
   ({ classes }) => (
     <nav className={classes.Nav}>
