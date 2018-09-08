@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
-import injectSheet from 'react-jss';
 import defaultStyles from 'styles';
 import PoppinsFont from 'fonts/Poppins/Poppins-Light.ttf'
 
