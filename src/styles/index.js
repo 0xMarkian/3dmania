@@ -3,6 +3,6 @@ export default {
   baseFontColor: 'white',
   baseFontSize: '18px',
   defaultSection: {
-    padding: '10% 15%',
+    padding: '10% 15% 2% 15%',
   },
 }
