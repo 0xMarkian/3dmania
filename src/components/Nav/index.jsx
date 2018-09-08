@@ -7,10 +7,12 @@ export default injectSheet({
   Nav: {
     width: '100%',
     background: defaultStyles.baseColor,
+    position: 'fixed',
+    padding: '30px 50px',
   },
   BrandTitle: {
-    color: 'white', 
-    fontSize: '22px',
+    color: 'white',
+    fontSize: '1.2em',
   },
 })(
   ({ classes }) => (

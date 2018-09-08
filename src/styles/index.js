@@ -1,3 +1,4 @@
 export default {
-  baseColor: '#242424'
+  baseColor: '#242424',
+  defaultFontSize: '18px',
 }

@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
 import injectSheet from 'react-jss';
-import { Button } from 'reactstrap';
 import defaultStyles from './styles';
+import PoppinsFont from './fonts/Poppins/Poppins-Light.ttf'
 
 import Nav from './components/Nav';
 
 @injectSheet({
   '@global': {
+    '@font-face': {
+        fontFamily: 'Poppins',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        src: `url(${PoppinsFont}) format("opentype")`,
+    },
     '*': {
       boxSizing: 'border-box',
       position: 'relative',
@@ -18,6 +24,8 @@ import Nav from './components/Nav';
     },
   },
   App: {
+    fontFamily: 'Poppins',
+    fontSize: defaultStyles.defaultFontSize,
     background: defaultStyles.baseColor,
     overflow: 'auto',
     position: 'relative',
@@ -35,7 +43,6 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Nav />
-        <Button color="primary">test</Button>
       </div>
     );
   }
