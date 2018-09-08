@@ -1,9 +1,11 @@
+const { defaultSection } = commonStyles
+
 export default injectSheet({
   Section: {
-    padding: '3%'
+    ...defaultSection,
   }
 })(
-  ({ children }) => (
-    <section>{children}</section>
+  ({ children, ...others }) => (
+    <section {...others}>{children}</section>
   )
 )

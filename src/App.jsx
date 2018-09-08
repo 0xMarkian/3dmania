@@ -5,6 +5,7 @@ import PoppinsFont from 'fonts/Poppins/Poppins-Light.ttf'
 
 import Nav from 'components/Nav';
 import Header from 'components/Header'
+import ProcessSection from 'components/ProcessSection'
 
 @injectSheet({
   '@global': {
@@ -49,6 +50,7 @@ class App extends Component {
       <div className={classes.App}>
         <Nav />
         <Header />
+        <ProcessSection/>
       </div>
     );
   }

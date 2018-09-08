@@ -1,5 +1,13 @@
-import React from 'react'
+import Section from '../Section'
 
-import injectSheet from 'react-jss'
-
-export default 
+export default compose(
+  injectSheet({
+    ProcessSection: {
+      background: 'white',
+    }
+  })
+)( ({ classes }) => (
+  <Section className={classes.ProcessSection}>
+    <h2>Process</h2> 
+  </Section>  
+))

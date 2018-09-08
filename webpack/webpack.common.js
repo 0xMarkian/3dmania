@@ -51,6 +51,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       React: 'react',
+      compose: ['redux', 'compose'],
       injectSheet: ['react-jss','default'],
       fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
       commonStyles: ['styles', 'default'],
