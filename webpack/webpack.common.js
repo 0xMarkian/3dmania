@@ -53,6 +53,7 @@ module.exports = {
       React: 'react',
       injectSheet: 'react-jss',
       fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+      commonStyles: 'styles',
     }),
   ],
 };

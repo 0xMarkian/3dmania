@@ -1,9 +1,12 @@
-import React from 'react'
-
-import injectSheet from 'react-jss'
-
-export default () => (
-  <header>
+export default injectSheet({
+  defaultSection: commonStyles.defaultSection,
+  ContentWrapper: {
     
-  </header> 
+  },
+})(
+  ({ classes }) => (
+    <header >
+      <div className={ContentWrapper} />
+    </header>
+  )
 )
