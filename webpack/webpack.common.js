@@ -1,20 +1,12 @@
 const webpack = require('webpack');
 const commonPaths = require('./paths');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: commonPaths.entryPath,
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|jsx)$/,
-        loader: 'eslint-loader',
-        exclude: /(node_modules)/,
-        options: {
-          emitWarning: process.env.NODE_ENV !== 'production',
-        },
-      },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
@@ -46,6 +38,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
+    alias: {
+      fonts: path.resolve(__dirname, '../src/fonts'),
+      components: path.resolve(__dirname, '../src/components'),
+      styles: path.resolve(__dirname, '../src/styles'),
+    }
   },
   plugins: [
     new webpack.ProgressPlugin(),

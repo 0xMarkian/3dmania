@@ -1,7 +1,7 @@
 import React from 'react'
 
 import injectSheet from 'react-jss'
-import defaultStyles from '../../styles'
+import defaultStyles from 'styles'
 
 export default injectSheet({
   Nav: {
