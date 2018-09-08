@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
-import defaultStyles from 'styles';
 import PoppinsFont from 'fonts/Poppins/Poppins-Light.ttf'
 
 import Nav from 'components/Nav';
+import Header from 'components/Header'
 
 @injectSheet({
   '@global': {
@@ -18,14 +18,20 @@ import Nav from 'components/Nav';
       boxSizing: 'border-box',
       position: 'relative',
     },
+    a: {
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'none',
+      },
+    },
     body: {
       margin: 0,
     },
   },
   App: {
     fontFamily: 'Poppins',
-    fontSize: defaultStyles.defaultFontSize,
-    background: defaultStyles.baseColor,
+    fontSize: commonStyles.baseFontSize,
+    background: commonStyles.baseColor,
     overflow: 'auto',
     position: 'relative',
   },
@@ -42,6 +48,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Nav />
+        <Header />
       </div>
     );
   }
