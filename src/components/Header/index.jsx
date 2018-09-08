@@ -1,15 +1,21 @@
+import {Container, Row} from 'reactstrap'
+
 import googleLogo from 'images/partners/google.png'
 
+const { defaultSection } = commonStyles
 
 export default injectSheet({
-  SectionWrapper: commonStyles.defaultSection,
+  SectionWrapper: {
+    ...defaultSection,
+    marginTop: '5%',
+  },
   Heading: {
     fontSize: '4em',
     color: 'white',
     fontWeight: 'bold',
   },
   HighlightedText: {
-    color: '#00f19f',
+    color: commonStyles.highlightedColor,
   },
   Description: {
     color: '#bbb',
@@ -26,22 +32,22 @@ export default injectSheet({
   },
 })(
   ({ classes }) => (
-    <header className={classes.SectionWrapper}>
-      <div className={classes.ContentWrapper}>
-        <h1 className={classes.Heading}>
-          Creating<br/>
-          connections<br/>
-          that <span className={classes.HighlightedText}>count</span>
-        </h1>
-        <p className={classes.Description}>rehab helps brands create scalable, one-to-one relationships with people through the tech they love. We're leaders in using voice, messaging, AR, web-based products and service design to create branded utilities and experiences that truly impact people's lives.</p>
-        <div className={classes.PartnersWrapper}>
-          <img className={classes.Partner} src={googleLogo} alt='Google'/>
-          <img className={classes.Partner} src={googleLogo} alt='Google'/>
-          <img className={classes.Partner} src={googleLogo} alt='Google'/>
-          <img className={classes.Partner} src={googleLogo} alt='Google'/>
-          <img className={classes.Partner} src={googleLogo} alt='Google'/>
-        </div>
-      </div>
-    </header>
+      <header className={classes.SectionWrapper}>
+        <Container>
+          <h1 className={classes.Heading}>
+            Creating<br/>
+            connections<br/>
+            that <span className={classes.HighlightedText}>count</span>
+          </h1>
+          <p className={classes.Description}>rehab helps brands create scalable, one-to-one relationships with people through the tech they love. We're leaders in using voice, messaging, AR, web-based products and service design to create branded utilities and experiences that truly impact people's lives.</p>
+          <div className={classes.PartnersWrapper}>
+            <img className={classes.Partner} src={googleLogo} alt='Google'/>
+            <img className={classes.Partner} src={googleLogo} alt='Google'/>
+            <img className={classes.Partner} src={googleLogo} alt='Google'/>
+            <img className={classes.Partner} src={googleLogo} alt='Google'/>
+            <img className={classes.Partner} src={googleLogo} alt='Google'/>
+          </div>
+          </Container>
+      </header>
   )
 )

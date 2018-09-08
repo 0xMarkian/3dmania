@@ -23,3 +23,13 @@ a:hover {
 body {
   margin: 0;
 }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+.container-fluid {
+  padding: 0;
+}

@@ -2,7 +2,8 @@ export default {
   baseColor: '#242424',
   baseFontColor: 'white',
   baseFontSize: '18px',
+  highlightedColor: '#00f19f',
   defaultSection: {
-    padding: '10% 15% 2% 15%',
+    padding: '5% 0',
   },
 }

@@ -1,3 +1,5 @@
+import {Container} from 'reactstrap'
+
 const { defaultSection } = commonStyles
 
 export default injectSheet({
@@ -5,7 +7,9 @@ export default injectSheet({
     ...defaultSection,
   }
 })(
-  ({ children, ...others }) => (
-    <section {...others}>{children}</section>
+  ({ classes, children, ...others }) => (
+    <section {...others} className={[classes.Section, others.className || ''].join(' ')}>
+      <Container>{children}</Container>
+    </section>
   )
 )

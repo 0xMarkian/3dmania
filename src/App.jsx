@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
+import {Container} from 'reactstrap'
 
 import Nav from 'components/Nav';
 import Header from 'components/Header'
@@ -25,11 +26,11 @@ class App extends Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.App}>
+      <Container fluid={true} className={classes.App}>
         <Nav />
         <Header />
-        <ProcessSection/>
-      </div>
+        <ProcessSection />
+      </Container>
     );
   }
 }
