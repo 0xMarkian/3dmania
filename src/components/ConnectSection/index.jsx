@@ -1,9 +1,11 @@
 import Section from 'components/Section'
 
+const { breakpoints } = commonStyles
+
 export default compose(injectSheet({
   SectionWrapper: {
     paddingTop: '8%',
-    background: '#4f48ff',
+    background: commonStyles.secondaryColor,
   },
   Subtitle: {
     fontWeight: 500,
@@ -23,14 +25,28 @@ export default compose(injectSheet({
     fontWeight: 500,
     '&:hover': {
       background: 'white',
-      color: '#4f48ff!important',
+      color: `!important`,
     },
-  }
+  },
+  [breakpoints.md.lt]: {
+    Title: {
+      textAlign: 'center',
+    },
+    Subtitle: {
+      textAlign: 'center',
+    },
+    Button: {
+      margin: '0 auto',
+    },
+  },
+  NoBr: {
+    whiteSpace: 'nowrap',
+  },
 }), hot(module))(
   ({ classes }) => (
     <Section className={classes.SectionWrapper}>
       <h3 className={classes.Subtitle}>Change starts here</h3>
-      <h1 className={classes.Title}>Want to get connected? Let's chat.</h1>
+      <h1 className={classes.Title}>Want to get connected? <span className={classes.NoBr}>Let's chat.</span></h1>
       <a className={classes.Button}>Email us today</a>
     </Section>
   )

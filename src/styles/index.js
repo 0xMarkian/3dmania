@@ -6,16 +6,15 @@ const lgMedia = formatMedia(992)
 const xlMedia = formatMedia(1200)
 
 export default {
+  // colors
   baseColor: '#242424',
-  baseFontColor: 'white',
-  baseFontSize: '18px',
   highlightedColor: '#00f19f',
   secondAccentColor: 'white',
+  secondaryColor: '#4f48ff',
 
-  defaultSection: {
-    padding: '5% 0',
-  },
-
+  baseFontColor: 'white',
+  baseFontSize: '18px',
+  
   breakpoints: {
     sm: { lt: smMedia('max'), gt: smMedia('min') },
     md: { lt: mdMedia('max'), gt: mdMedia('min') },
