@@ -60,9 +60,9 @@ export default compose(injectSheet({
     SectionWrapper: {paddingTop: '30%'},
     Heading: {fontSize: '3em'}
   },
-}), hot(module))(
-  ({ classes }) => (
-    <header className={classes.SectionWrapper}>
+}))(
+  ({ classes, ...props }) => (
+    <header className={classes.SectionWrapper} {...props}>
       <Container>
         <Row>
           <Col>

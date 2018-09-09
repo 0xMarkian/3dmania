@@ -69,8 +69,8 @@ export default compose(injectSheet({
     }
   },
 }))(
-  ({ classes }) => (
-    <footer className={classes.SectionWrapper}>
+  ({ classes, ...props }) => (
+    <footer className={classes.SectionWrapper} {...props}>
       <Container>
         <Row>
           <Col md={8}>

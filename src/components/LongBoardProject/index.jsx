@@ -29,8 +29,8 @@ export default compose(
       maxWidth: '500px',
     },
   })
-)( ({ classes }) => (
-  <Section className={classes.LongBoardProject}>
+)( ({ classes, ...props }) => (
+  <Section className={classes.LongBoardProject} {...props}>
     <div className={classes.wrapper}>
       <CompanyBrand>Young Startup Team</CompanyBrand>
       <About><AccentExp color={"red"}>Building</AccentExp> first electro board with innovative batteries</About>

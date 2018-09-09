@@ -10,8 +10,8 @@ export default injectSheet({
   },
 
 })(
-  ({ classes, children, ...others }) => (
-    <section {...others} className={[classes.Section, others.className || ''].join(' ')}>
+  ({ classes, children, ...props }) => (
+    <section {...props} className={[classes.Section, props.className || ''].join(' ')}>
       <Container>{children}</Container>
     </section>
   )

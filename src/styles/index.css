@@ -32,6 +32,12 @@ body {
   margin: 0;
 }
 
+nav a.active {
+  color: white;
+  font-weight: 500;
+  font-size: 0.85em;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1020px;

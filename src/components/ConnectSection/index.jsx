@@ -3,10 +3,10 @@ import Section from 'components/Section'
 
 const { breakpoints } = commonStyles
 
-export default compose(injectSheet({
+export default compose(injectSheet(theme => ({
   SectionWrapper: {
     paddingTop: '8%',
-    background: commonStyles.secondaryColor,
+    background: theme.ConnectSection.accentColor,
   },
   Subtitle: {
     fontWeight: 500,
@@ -27,7 +27,7 @@ export default compose(injectSheet({
     fontWeight: 500,
     '&:hover': {
       background: 'white',
-      color: `!important`,
+      color: `${theme.ConnectSection.accentColor}!important`,
     },
   },
   [breakpoints.md.lt]: {
@@ -46,9 +46,10 @@ export default compose(injectSheet({
   NoBr: {
     whiteSpace: 'nowrap',
   },
-}), hot(module))(
-  ({ classes }) => (
-    <Section className={classes.SectionWrapper}>
+})
+))(
+  ({ classes, ...props}) => (
+    <Section className={classes.SectionWrapper} {...props}>
       <Row>
           <h3 className={classes.Subtitle}>Change starts here</h3>
           <h1 className={classes.Title}>Want to get connected? <span className={classes.NoBr}>Let's chat.</span></h1>

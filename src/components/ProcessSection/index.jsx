@@ -88,7 +88,7 @@ export default compose(injectSheet({
       }
     ]
 
-    return (<Section className={classes.ProcessSection}>
+    return (<Section className={classes.ProcessSection} id='process-section'>
       <h4 className={classes.Subtitle}>Process</h4>
       <h1 className={classes.Title}>Introducing Triage, <span className={classes.NoBr}>our method of</span>
         <br/>
