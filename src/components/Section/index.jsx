@@ -1,11 +1,14 @@
 import {Container} from 'reactstrap'
 
-const { defaultSection } = commonStyles
+
+export { default as Subtitle } from './Subtitle'
 
 export default injectSheet({
   Section: {
-    ...defaultSection,
-  }
+    padding: '6% 0 10%',
+    backgroundSize: 'cover',
+  },
+
 })(
   ({ classes, children, ...others }) => (
     <section {...others} className={[classes.Section, others.className || ''].join(' ')}>

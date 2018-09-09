@@ -1,21 +1,22 @@
-import Section from '../Section'
+import Section, { Subtitle } from '../Section'
 
 export default compose(
   injectSheet({
     ProcessSection: {
       background: 'white',
-      paddingTop: '5%',
       color: commonStyles.baseColor,
     },
-    Title: {
+    Appendix: {
       margin: '1em 0',
       fontWeight: 'bold',
+      fontSize: '2.5em',
     },
     HighlightedText: {
       color: commonStyles.highlightedColor,
     },
     Subtitle: {
       color: '#bbb',
+      fontSize: '1.2em',
     },
     StepsContainer: {
       marginTop: '5%',
@@ -43,12 +44,12 @@ export default compose(
   })
 )( ({ classes }) => (
   <Section className={classes.ProcessSection}>
-    <h4 className={classes.Subtitle}>Process</h4>
-    <h1 className={classes.Title}>Introducing Triage,
+    <Subtitle>Process</Subtitle>
+    <h4 className={classes.Appendix}>Introducing Triage,
       our method of
       <br/>
       <span className={classes.HighlightedText}>ensuring the work really works.</span>
-    </h1>
+    </h4>
     <div className={classes.StepsContainer}>
       <div className={classes.StepWrapper}>
         <div className={classes.FullStep}></div>

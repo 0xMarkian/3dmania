@@ -29,6 +29,8 @@ body {
     max-width: 960px;
   }
 }
+.container {
+}
 
 .container-fluid {
   padding: 0;

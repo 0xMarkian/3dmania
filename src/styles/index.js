@@ -3,7 +3,5 @@ export default {
   baseFontColor: 'white',
   baseFontSize: '18px',
   highlightedColor: '#00f19f',
-  defaultSection: {
-    padding: '5% 0',
-  },
+  secondAccentColor: 'white',
 }

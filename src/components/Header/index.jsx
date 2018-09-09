@@ -8,6 +8,7 @@ export default injectSheet({
   SectionWrapper: {
     ...defaultSection,
     marginTop: '5%',
+    paddingTop: '5%'
   },
   Heading: {
     fontSize: '4em',
