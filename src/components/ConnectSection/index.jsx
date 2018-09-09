@@ -1,6 +1,6 @@
 import Section from 'components/Section'
 
-export default injectSheet({
+export default compose(injectSheet({
   SectionWrapper: {
     paddingTop: '8%',
     background: '#4f48ff',
@@ -26,7 +26,7 @@ export default injectSheet({
       color: '#4f48ff!important',
     },
   }
-})(
+}), hot(module))(
   ({ classes }) => (
     <Section className={classes.SectionWrapper}>
       <h3 className={classes.Subtitle}>Change starts here</h3>

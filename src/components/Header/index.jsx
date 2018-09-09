@@ -4,7 +4,7 @@ import googleLogo from 'images/partners/google.png'
 
 const { defaultSection } = commonStyles
 
-export default injectSheet({
+export default compose(injectSheet({
   SectionWrapper: {
     ...defaultSection,
     marginTop: '5%',
@@ -30,7 +30,7 @@ export default injectSheet({
   Partner: {
     width: '10%',
   },
-})(
+}), hot(module))(
   ({ classes }) => (
       <header className={classes.SectionWrapper}>
         <Container>

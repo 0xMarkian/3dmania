@@ -34,7 +34,7 @@ const Link = injectSheet({
   )
 )
 
-export default injectSheet({
+export default compose(injectSheet({
   SectionWrapper: {
     ...defaultSection,
     paddingBottom: '3%',
@@ -69,7 +69,7 @@ export default injectSheet({
       marginLeft: '2em',
     }
   },
-})(
+}), hot(module))(
   ({ classes }) => (
     <footer className={classes.SectionWrapper}>
       <Container>

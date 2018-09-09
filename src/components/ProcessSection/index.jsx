@@ -42,45 +42,48 @@ const ProcessStep = injectSheet({
     fontSize: '0.7em',
     listStyle: 'none',
   },
-})(({ classes, type, content }) => (
-  <div className={classes[type]}>
-    <div className={classes.StepContent}>
-      <h3 className={classes.StepTitle}>{content.title}</h3>
-      {content.desc &&
-        <ul className={classes.StepDesc}>
-          {content.desc.map((descText, descIndex) => <li key={descIndex}>{descText}</li>)}
-        </ul>
-      }
+})(
+  ({ classes, type, content }) => (
+    <div className={classes[type]}>
+      <div className={classes.StepContent}>
+        <h3 className={classes.StepTitle}>{content.title}</h3>
+        {content.desc &&
+          <ul className={classes.StepDesc}>
+            {content.desc.map((descText, descIndex) => <li key={descIndex}>{descText}</li>)}
+          </ul>
+        }
+      </div>
     </div>
-  </div>
-))
+  )
+)
 
-export default injectSheet({
-    ProcessSection: {
-      background: 'white',
-      paddingTop: '5%',
-      color: commonStyles.baseColor,
-    },
-    Title: {
-      margin: '1em 0',
-      fontWeight: 'bold',
-    },
-    HighlightedText: {
-      color: commonStyles.highlightedColor,
-    },
-    Subtitle: {
-      color: '#bbb',
-    },
-    StepsContainer: {
-      marginTop: '5%',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-    StepWrapper: {
-      width: '15%',
-    },
-  })( ({ classes }) => {
+export default compose(injectSheet({
+  ProcessSection: {
+    background: 'white',
+    paddingTop: '5%',
+    color: commonStyles.baseColor,
+  },
+  Title: {
+    margin: '1em 0',
+    fontWeight: 'bold',
+  },
+  HighlightedText: {
+    color: commonStyles.highlightedColor,
+  },
+  Subtitle: {
+    color: '#bbb',
+  },
+  StepsContainer: {
+    marginTop: '5%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  StepWrapper: {
+    width: '15%',
+  },
+}), hot(module))(
+  ({ classes }) => {
     const processSchema = [
       {
         title: 'Idea',

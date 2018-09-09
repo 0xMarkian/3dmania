@@ -52,6 +52,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       React: 'react',
+      hot: ['react-hot-loader', 'hot'],
       compose: ['redux', 'compose'],
       injectSheet: ['react-jss','default'],
       fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
