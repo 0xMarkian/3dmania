@@ -36,6 +36,9 @@ body {
     max-width: 1020px;
   }
 }
+.container {
+  padding: 0 30px;
+}
 
 .container-fluid {
   padding: 0;
