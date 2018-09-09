@@ -49,7 +49,7 @@ export default compose(injectSheet({
     },
     Heading: {
       fontSize: '3.5em',
-      textAlign: 'center',
+      textAlign: 'left',
     },
     Description: {
       textAlign: 'justify',
@@ -67,13 +67,15 @@ export default compose(injectSheet({
         <Row>
           <Col>
             <h1 className={classes.Heading}>
-              Creating<br/>
-              connections<br/>
-              that <span className={classes.HighlightedText}>count</span>
+              We<br/>
+              <span className={classes.HighlightedText}>make </span>
+              dreams <br/>reality
             </h1>
           </Col>
         </Row>
-        <p className={classes.Description}>rehab helps brands create scalable, one-to-one relationships with people through the tech they love. We're leaders in using voice, messaging, AR, web-based products and service design to create branded utilities and experiences that truly impact people's lives.</p>
+        <p className={classes.Description}>
+          3dmania helps young startups, businesses and just curious people create solutions, utilizing most advanced Digital Manufacturing and IT technologies. Agile Product Development & Rapid prototyping 
+        </p>
       </Container>
     </header>
   )
