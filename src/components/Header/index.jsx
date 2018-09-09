@@ -1,14 +1,12 @@
 import {Container, Row, Col} from 'reactstrap'
 
-import googleLogo from 'images/partners/google.png'
-
 const { defaultSection, breakpoints } = commonStyles
 
 export default compose(injectSheet({
   SectionWrapper: {
     ...defaultSection,
     marginTop: '5%',
-    paddingTop: '5%'
+    padding: '5% 0',
   },
   Heading: {
     fontSize: '4em',
@@ -64,26 +62,19 @@ export default compose(injectSheet({
   },
 }), hot(module))(
   ({ classes }) => (
-      <header className={classes.SectionWrapper}>
-        <Container>
-          <Row>
-            <Col>
-              <h1 className={classes.Heading}>
-                Creating<br/>
-                connections<br/>
-                that <span className={classes.HighlightedText}>count</span>
-              </h1>
-            </Col>
-          </Row>
-          <p className={classes.Description}>rehab helps brands create scalable, one-to-one relationships with people through the tech they love. We're leaders in using voice, messaging, AR, web-based products and service design to create branded utilities and experiences that truly impact people's lives.</p>
-          <div className={classes.PartnersWrapper}>
-            <img className={classes.Partner} src={googleLogo} alt='Google'/>
-            <img className={classes.Partner} src={googleLogo} alt='Google'/>
-            <img className={classes.Partner} src={googleLogo} alt='Google'/>
-            <img className={classes.Partner} src={googleLogo} alt='Google'/>
-            <img className={classes.Partner} src={googleLogo} alt='Google'/>
-          </div>
-          </Container>
-      </header>
+    <header className={classes.SectionWrapper}>
+      <Container>
+        <Row>
+          <Col>
+            <h1 className={classes.Heading}>
+              Creating<br/>
+              connections<br/>
+              that <span className={classes.HighlightedText}>count</span>
+            </h1>
+          </Col>
+        </Row>
+        <p className={classes.Description}>rehab helps brands create scalable, one-to-one relationships with people through the tech they love. We're leaders in using voice, messaging, AR, web-based products and service design to create branded utilities and experiences that truly impact people's lives.</p>
+      </Container>
+    </header>
   )
 )

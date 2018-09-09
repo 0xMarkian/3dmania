@@ -41,6 +41,12 @@ export default compose(injectSheet({
       marginTop: '10%',
     },
   },
+  [breakpoints.lg.gt]: {
+    StepsContainer: {
+      display: 'flex',
+      alignItems: 'center',
+    },
+  },
   NoBr: {
     whiteSpace: 'nowrap',
   },
@@ -92,8 +98,7 @@ export default compose(injectSheet({
         {processSchema.map((item, index) =>
           <Col
             className={classes.StepWrapper} key={index}
-            xs={{size: 8, offset: 2}}
-            sm={{size: 6, offset: 3}}
+            xs={{size: 6, offset: 3}}
             md={{size: 4, offset: 4}}
             lg={{size: 2, offset: (index == 0 ? 1:0)}}
           >

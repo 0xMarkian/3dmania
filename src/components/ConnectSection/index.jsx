@@ -1,3 +1,4 @@
+import { Row, Col } from 'reactstrap'
 import Section from 'components/Section'
 
 const { breakpoints } = commonStyles
@@ -22,6 +23,7 @@ export default compose(injectSheet({
     border: '5px solid white',
     borderRadius: '5px',
     transition: 'all 0.3s ease',
+    textAlign: 'center',
     fontWeight: 500,
     '&:hover': {
       background: 'white',
@@ -33,10 +35,12 @@ export default compose(injectSheet({
       textAlign: 'center',
     },
     Subtitle: {
+      width: '100%',
       textAlign: 'center',
     },
     Button: {
-      margin: '0 auto',
+      marginLeft: '50%',
+      transform: 'translateX(-50%)',
     },
   },
   NoBr: {
@@ -45,9 +49,13 @@ export default compose(injectSheet({
 }), hot(module))(
   ({ classes }) => (
     <Section className={classes.SectionWrapper}>
-      <h3 className={classes.Subtitle}>Change starts here</h3>
-      <h1 className={classes.Title}>Want to get connected? <span className={classes.NoBr}>Let's chat.</span></h1>
-      <a className={classes.Button}>Email us today</a>
+      <Row>
+          <h3 className={classes.Subtitle}>Change starts here</h3>
+          <h1 className={classes.Title}>Want to get connected? <span className={classes.NoBr}>Let's chat.</span></h1>
+      </Row>
+      <Row>
+        <a className={classes.Button}>Email us today</a>
+      </Row>
     </Section>
   )
 )
