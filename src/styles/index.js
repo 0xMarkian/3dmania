@@ -10,6 +10,7 @@ export default {
   baseFontColor: 'white',
   baseFontSize: '18px',
   highlightedColor: '#00f19f',
+  secondaryColor: '#4f48ff',
   defaultSection: {
     padding: '5% 0',
   },

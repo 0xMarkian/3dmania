@@ -1,61 +1,10 @@
-import Section from 'components/Section'
+import {Row, Col} from 'reactstrap'
 
-const ProcessStep = injectSheet({
-  FullStep: {
-    width: '100%',
-    paddingTop: '100%',
-    background: '#242424',
-    borderRadius: '50%',
-  },
-  HalfStep: {
-    extend: 'FullStep',
-    margin: '0 auto',
-    '&:first-child': {
-      marginBottom: '20%',
-    },
-  },
-  AdditionalHalfStep: {
-    extend: 'FullStep',
-    zIndex: 2,
-    width: '60%',
-    paddingTop: '60%',
-    background: '#242424',
-    position: 'absolute',
-    right: '-18%',
-    top: '-18%',
-    color: 'white',
-    fontSize: '0.7em',
-  },
-  StepContent: {
-    width: '100%',
-    position: 'absolute',
-    top: 0,
-    textAlign: 'center',
-  },
-  StepTitle: {
-    marginTop: '30%',
-    fontSize: '0.9em',
-    color: commonStyles.highlightedColor,
-  },
-  StepDesc: {
-    color: 'white',
-    fontSize: '0.7em',
-    listStyle: 'none',
-  },
-})(
-  ({ classes, type, content }) => (
-    <div className={classes[type]}>
-      <div className={classes.StepContent}>
-        <h3 className={classes.StepTitle}>{content.title}</h3>
-        {content.desc &&
-          <ul className={classes.StepDesc}>
-            {content.desc.map((descText, descIndex) => <li key={descIndex}>{descText}</li>)}
-          </ul>
-        }
-      </div>
-    </div>
-  )
-)
+import Section from 'components/Section'
+import ProcessStep from 'components/ProcessSection/ProcessStep'
+
+
+const { breakpoints } = commonStyles
 
 export default compose(injectSheet({
   ProcessSection: {
@@ -75,12 +24,25 @@ export default compose(injectSheet({
   },
   StepsContainer: {
     marginTop: '5%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
-  StepWrapper: {
-    width: '15%',
+  [breakpoints.md.lt]: {
+    ProcessSection: {
+      paddingTop: '10%',
+    },
+    Title: {
+      textAlign: 'center',
+    },
+    Subtitle: {
+      textAlign: 'center',
+    },
+  },
+  [breakpoints.lg.lt]: {
+    StepWrapper: {
+      marginTop: '10%',
+    },
+  },
+  NoBr: {
+    whiteSpace: 'nowrap',
   },
 }), hot(module))(
   ({ classes }) => {
@@ -122,14 +84,19 @@ export default compose(injectSheet({
 
     return (<Section className={classes.ProcessSection}>
       <h4 className={classes.Subtitle}>Process</h4>
-      <h1 className={classes.Title}>Introducing Triage,
-        our method of
+      <h1 className={classes.Title}>Introducing Triage, <span className={classes.NoBr}>our method of</span>
         <br/>
         <span className={classes.HighlightedText}>ensuring the work really works.</span>
       </h1>
-      <div className={classes.StepsContainer}>
+      <Row className={classes.StepsContainer}>
         {processSchema.map((item, index) =>
-          <div className={classes.StepWrapper} key={index}>
+          <Col
+            className={classes.StepWrapper} key={index}
+            xs={{size: 8, offset: 2}}
+            sm={{size: 6, offset: 3}}
+            md={{size: 4, offset: 4}}
+            lg={{size: 2, offset: (index == 0 ? 1:0)}}
+          >
             {item.type === 'full' &&
               <ProcessStep type='FullStep' content={item}/>
             }
@@ -145,8 +112,9 @@ export default compose(injectSheet({
                 <ProcessStep type='AdditionalHalfStep' content={item.secondary} />
               </div>
             }
-          </div>
+          </Col>
         )}
-      </div>
+      </Row>
     </Section>)
-  })
+  }
+)

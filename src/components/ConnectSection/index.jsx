@@ -3,7 +3,7 @@ import Section from 'components/Section'
 export default compose(injectSheet({
   SectionWrapper: {
     paddingTop: '8%',
-    background: '#4f48ff',
+    background: commonStyles.secondaryColor,
   },
   Subtitle: {
     fontWeight: 500,
