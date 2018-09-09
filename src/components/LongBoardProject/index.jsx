@@ -6,35 +6,28 @@ import BackgroundPhoto from './background.jpg'
 
 const { LongBoardProject: LongBoardProjectStyles } = commonStyles
 export default compose(
-  injectSheet({
+  injectSheet(theme => ({
     LongBoardProject: {
       backgroundImage: `url(${ BackgroundPhoto })`,
       height: '700px',
       color: LongBoardProjectStyles.accentColor,
       textAlign: 'right',
       '&:before': {
-        display: 'block',
-        content: '""',
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        background: 'black',
-        opacity: '.3',
+        ...theme.Section.BlackLayer,
+        opacity: '.65',
       }
     },
     wrapper: {
       float: 'right',
-      maxWidth: '500px',
+      maxWidth: '700px',
     },
-  })
-)( ({ classes }) => (
+  }))
+)( ({ classes, theme }) => (
   <Section className={classes.LongBoardProject}>
     <div className={classes.wrapper}>
       <CompanyBrand>Young Startup Team</CompanyBrand>
-      <About><AccentExp color={"red"}>Building</AccentExp> first electro board with innovative batteries</About>
-      <TechStack>{ ['Digital', 'IT'] }</TechStack>
+      <About>Building first <AccentExp color={theme.secondAccentColor}>electro board </AccentExp>with innovative batteries</About>
+      <TechStack>{ ['Industrial Design', 'Digital Manufacturing', '3Dprint', 'CAD Modelling'] }</TechStack>
     </div>
   </Section> 
 ))

@@ -22,7 +22,21 @@ export default {
     xl: { lt: xlMedia('max'), gt: xlMedia('min') },
   },
 
+  Section: {
+    BlackLayer: {
+      display: 'block',
+      content: '""',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'black',
+      opacity: '.3',
+    },
+  },
+
   LongBoardProject: {
-    accentColor: '#239BFC',
+    accentColor: '#00f19f',
   }
 }

@@ -8,6 +8,7 @@ import Nav from 'components/Nav'
 import Header from 'components/Header'
 import ProcessSection from 'components/ProcessSection'
 import LongBoardProject from 'components/LongBoardProject'
+import FarmBotProject from 'components/FarmBotProject'
 import ConnectSection from 'components/ConnectSection'
 import Footer from 'components/Footer'
 
@@ -31,7 +32,8 @@ class App extends Component {
           <Nav />
           <Header />
           <ProcessSection />
-          <LongBoardProject/>
+          <LongBoardProject />
+          <FarmBotProject />
           <ConnectSection />
           <Footer />
       </Container>
