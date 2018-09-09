@@ -46,6 +46,8 @@ const TextSection = injectSheet({
 })( ({ classes }) => (
     <Col className={classes.TextSection} md={6}>
       <CompanyBrand>Lion's Shade</CompanyBrand> 
+      <p>Work Automation</p>
+      <About>Helping farm hobbyists manage their garden with ease</About>
     </Col>
 ))
 

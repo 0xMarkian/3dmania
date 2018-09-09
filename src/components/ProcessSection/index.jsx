@@ -65,11 +65,11 @@ export default compose(injectSheet({
       {
         type: 'half',
         top: {
-          title: 'TOP',
+          title: 'Hardware',
           desc: ['point 1', 'point 2', 'point 2'],
         },
         bottom: {
-          title: 'BOTTOM',
+          title: 'Software',
           desc: ['point 1', 'point 2', 'point 2'],
         },
       },

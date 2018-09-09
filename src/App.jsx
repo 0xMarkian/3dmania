@@ -34,6 +34,7 @@ class App extends React.Component {
           <Header id='header-section' />
           <ProcessSection id='process-section' />
           <LongBoardProject id='longboard-project-section' />
+          <FarmBotProject id='farmbot-project-section' />
           <ConnectSection id='connect-section' />
           <Footer id='about-section' />
         </Container>
