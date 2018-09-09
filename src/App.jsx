@@ -4,6 +4,7 @@ import {Container} from 'reactstrap'
 import Nav from 'components/Nav'
 import Header from 'components/Header'
 import ProcessSection from 'components/ProcessSection'
+import LongBoardProject from 'components/LongBoardProject'
 import ConnectSection from 'components/ConnectSection'
 import Footer from 'components/Footer'
 
@@ -31,11 +32,12 @@ class App extends Component {
         <Nav />
         <Header />
         <ProcessSection />
+        <LongBoardProject/>
         <ConnectSection />
         <Footer />
       </Container>
-    )
+    );
   }
 }
 
-export default hot(module)(App)
+export default hot(module)(App);

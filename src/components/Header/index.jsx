@@ -7,8 +7,11 @@ const { defaultSection, breakpoints } = commonStyles
 export default compose(injectSheet({
   SectionWrapper: {
     ...defaultSection,
+    marginTop: '5%',
+    paddingTop: '5%'
   },
   Heading: {
+    fontSize: '4em',
     color: 'white',
     fontWeight: 'bold',
   },
