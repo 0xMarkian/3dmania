@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { ThemeProvider } from 'react-jss'
 import {Container} from 'reactstrap'
+
+import theme from 'styles'
 
 import Nav from 'components/Nav'
 import Header from 'components/Header'
@@ -19,23 +22,20 @@ import Footer from 'components/Footer'
   },
 })
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
   render() {
     const { classes } = this.props
 
     return (
-      <Container fluid={true} className={classes.App}>
-        <Nav />
-        <Header />
-        <ProcessSection />
-        <LongBoardProject/>
-        <ConnectSection />
-        <Footer />
+      <ThemeProvider theme={theme}>
+        <Container fluid={true} className={classes.App}>
+          <Nav />
+          <Header />
+          <ProcessSection />
+          <LongBoardProject/>
+          <ConnectSection />
+          <Footer />
       </Container>
+      </ThemeProvider>
     );
   }
 }
