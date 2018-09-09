@@ -13,6 +13,7 @@ export default compose(injectSheet({
     color: commonStyles.baseColor,
   },
   Title: {
+    display: 'none',
     margin: '1em 0',
     fontWeight: 'bold',
   },

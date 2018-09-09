@@ -60,8 +60,8 @@ export default compose(
       },
     }
   }))
-)( ({ classes }) => (
-  <Section className={classes.FarmBotProject}>
+)( ({ classes, ...props }) => (
+  <Section {...props} className={classes.FarmBotProject}>
     <Row>
       <TextSection/> 
       <PhotoSection/>    

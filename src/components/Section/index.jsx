@@ -7,6 +7,7 @@ export default injectSheet({
   Section: {
     padding: '6% 0 10%',
     backgroundSize: 'cover',
+    overflowX: 'hidden'
   },
 
 })(

@@ -5,11 +5,13 @@ import { FaBars } from 'react-icons/fa'
 const {breakpoints} = commonStyles
 
 @injectSheet({
-  Nav: {
+  NavWrapper: {
     width: '100%',
     zIndex: 5,
     background: 'rgba(36, 36, 36, 0.9)',
     position: 'fixed',
+  },
+  Nav: {
     padding: '25px 50px',
     color: '#bbb',
   },
@@ -63,6 +65,14 @@ const {breakpoints} = commonStyles
     HamburgerIcon: {
       display: 'none',
     },
+
+  },
+  Warning: {
+    width: '100%',
+    fontWeight: 500,
+    textAlign: 'center',
+    color: 'white',
+    background: '#E7CD37',
   },
 })
 class Nav extends React.Component {
@@ -86,23 +96,27 @@ class Nav extends React.Component {
     
     const NavClassName = [classes.Nav, (navbarOpen && classes.NavOpen) || ''].join(' ')
 
-    return (<nav className={NavClassName}>
-      <h1 className={classes.BrandTitle}>3D Mania</h1>
-      <a className={classes.HamburgerIcon} onClick={this.toggleNavbar}><FaBars /></a>
-      <div className={NavLinksWrapperClassName}>
-        <Scrollspy
-          items={sections}
-          currentClassName='active'
-          componentTag='div'
-        >
-          <AnchorLink className={classes.NavLink} href={`#${sections[0]}`}>Header</AnchorLink>
-          <AnchorLink className={classes.NavLink} href={`#${sections[1]}`}>Process</AnchorLink>
-          <AnchorLink className={classes.NavLink} href={`#${sections[2]}`}>Longboard</AnchorLink>
-          <AnchorLink className={classes.NavLink} href={`#${sections[3]}`}>Connect us</AnchorLink>
-          <AnchorLink className={classes.NavLink} href={`#${sections[4]}`}>About us</AnchorLink>
-        </Scrollspy>
-      </div>
-    </nav>)
+    return (<div className={classes.NavWrapper}>
+      <nav className={NavClassName}>
+        <h1 className={classes.BrandTitle}>3D Mania</h1>
+        <a className={classes.HamburgerIcon} onClick={this.toggleNavbar}><FaBars /></a>
+        <div className={NavLinksWrapperClassName}>
+          <Scrollspy
+            items={sections}
+            currentClassName='active'
+            componentTag='div'
+          >
+            <AnchorLink className={classes.NavLink} href={`#${sections[0]}`}>Header</AnchorLink>
+            <AnchorLink className={classes.NavLink} href={`#${sections[1]}`}>Process</AnchorLink>
+            <AnchorLink className={classes.NavLink} href={`#${sections[2]}`}>Longboard</AnchorLink>
+            <AnchorLink className={classes.NavLink} href={`#${sections[3]}`}>Farmbot</AnchorLink>
+            <AnchorLink className={classes.NavLink} href={`#${sections[4]}`}>Connect us</AnchorLink>
+            <AnchorLink className={classes.NavLink} href={`#${sections[5]}`}>About us</AnchorLink>
+          </Scrollspy>
+        </div>
+      </nav>
+      <div className={classes.Warning}>Site is still in development. Do not judge strictly.</div>
+    </div>)
   }
 }
 

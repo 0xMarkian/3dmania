@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     const { classes } = this.props
 
-    const sections = ['header-section', 'process-section', 'longboard-project-section', 'connect-section', 'about-section']
+    const sections = ['header-section', 'process-section', 'longboard-project-section', 'farmbot-project-section', 'connect-section', 'about-section']
 
     return (
       <ThemeProvider theme={theme}>
