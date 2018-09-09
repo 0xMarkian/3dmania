@@ -10,7 +10,6 @@ export default {
   baseColor: '#242424',
   highlightedColor: '#00f19f',
   secondAccentColor: 'white',
-  secondaryColor: '#4f48ff',
 
   baseFontColor: 'white',
   baseFontSize: '18px',
@@ -38,5 +37,8 @@ export default {
 
   LongBoardProject: {
     accentColor: '#00f19f',
-  }
+  },
+  ConnectSection: {
+    accentColor: '#4f48ff',
+  },
 }

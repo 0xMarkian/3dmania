@@ -21,13 +21,13 @@ export default compose(
       float: 'right',
       maxWidth: '700px',
     },
-  }))
-)( ({ classes, theme }) => (
-  <Section className={classes.LongBoardProject}>
+  })
+))( ({ classes, theme, ...props }) => (
+  <Section className={classes.LongBoardProject} {...props}>
     <div className={classes.wrapper}>
       <CompanyBrand>Young Startup Team</CompanyBrand>
       <About>Building first <AccentExp color={theme.secondAccentColor}>electro board </AccentExp>with innovative batteries</About>
       <TechStack>{ ['Industrial Design', 'Digital Manufacturing', '3Dprint', 'CAD Modelling'] }</TechStack>
     </div>
-  </Section> 
+  </Section>
 ))

@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
 import { ThemeProvider } from 'react-jss'
-import {Container} from 'reactstrap'
+import { Container } from 'reactstrap'
 
 import theme from 'styles'
 
@@ -22,21 +21,22 @@ import Footer from 'components/Footer'
     position: 'relative',
   },
 })
-class App extends Component {
+class App extends React.Component {
   render() {
     const { classes } = this.props
+
+    const sections = ['header-section', 'process-section', 'longboard-project-section', 'connect-section', 'about-section']
 
     return (
       <ThemeProvider theme={theme}>
         <Container fluid={true} className={classes.App}>
-          <Nav />
-          <Header />
-          <ProcessSection />
-          <LongBoardProject />
-          <FarmBotProject />
-          <ConnectSection />
-          <Footer />
-      </Container>
+          <Nav sections={sections}/>
+          <Header id='header-section' />
+          <ProcessSection id='process-section' />
+          <LongBoardProject id='longboard-project-section' />
+          <ConnectSection id='connect-section' />
+          <Footer id='about-section' />
+        </Container>
       </ThemeProvider>
     );
   }

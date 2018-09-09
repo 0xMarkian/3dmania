@@ -9,6 +9,8 @@ const { defaultSection } = commonStyles
 const Link = injectSheet({
   LinkWrapper: {
     cursor: 'pointer',
+    display: 'block',
+    marginTop: '2em',
     '& *': {display: 'block'},
     '&:hover span': {
       color: 'white',
@@ -37,10 +39,7 @@ const Link = injectSheet({
 export default compose(injectSheet({
   SectionWrapper: {
     ...defaultSection,
-    paddingBottom: '3%',
-  },
-  BottomRow: {
-    marginTop: '5%',
+    padding: '3% 0',
   },
   BaseLink: {
     color: '#777!important',
@@ -69,19 +68,19 @@ export default compose(injectSheet({
       marginLeft: '2em',
     }
   },
-}), hot(module))(
-  ({ classes }) => (
-    <footer className={classes.SectionWrapper}>
+}))(
+  ({ classes, ...props }) => (
+    <footer className={classes.SectionWrapper} {...props}>
       <Container>
         <Row>
           <Col md={8}>
             <Link title='New business enquiries' subtitle='newbusiness@team.rehab' />
           </Col>
           <Col md={4}>
-            <Link title='Join out team' subtitle='Current openings' />
+            <Link title='Join our team' subtitle='Current openings' />
           </Col>
         </Row>
-        <Row className={classes.BottomRow}>
+        <Row>
           <Col md={4}>
             <Link title='London' subtitle='118 Commercial Street, E1 6NF' />
           </Col>
