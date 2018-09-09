@@ -4,7 +4,7 @@ export default compose(injectSheet({
   FullStep: {
     width: '100%',
     paddingTop: '100%',
-    background: '#242424',
+    background: commonStyles.baseColor,
     borderRadius: '50%',
   },
   HalfStep: {
