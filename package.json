@@ -7,7 +7,8 @@
     "start": "cross-env NODE_ENV=development webpack-serve",
     "build": "cross-env NODE_ENV=production webpack",
     "format": "prettier --write 'packages/**/*.js'",
-    "test": "jest --watchAll --coverage"
+    "test": "jest --watchAll --coverage",
+    "deploy": "git pull && yarn build && pm2 start ./server.js"
   },
   "jest": {
     "automock": false,
