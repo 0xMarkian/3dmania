@@ -7,6 +7,7 @@ import Nav from 'components/Nav'
 import Header from 'components/Header'
 import ProcessSection from 'components/ProcessSection'
 import LongBoardProject from 'components/LongBoardProject'
+import FarmBotProject from 'components/FarmBotProject'
 import ConnectSection from 'components/ConnectSection'
 import Footer from 'components/Footer'
 
@@ -35,7 +36,7 @@ class App extends React.Component {
           <LongBoardProject id='longboard-project-section' />
           <ConnectSection id='connect-section' />
           <Footer id='about-section' />
-      </Container>
+        </Container>
       </ThemeProvider>
     );
   }

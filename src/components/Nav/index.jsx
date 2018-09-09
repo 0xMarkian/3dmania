@@ -45,6 +45,7 @@ const {breakpoints} = commonStyles
     },
     NavLinksWrapper: {
       width: '100%',
+      fontSize: '1.5em',
     },
     NavLinksWrapperOpen: {
       display: 'block',

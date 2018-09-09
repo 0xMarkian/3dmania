@@ -1,8 +1,9 @@
 export default compose(
   injectSheet({
     About: {
-      fontSize: '2.5em',
-      fontWeight: 'bold',
+      fontSize: '3.5em',
+      fontWeight: '500',
+      marginBottom: '5%',
     }
   })
 )( ({ classes, children }) => (

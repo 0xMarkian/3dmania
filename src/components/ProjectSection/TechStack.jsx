@@ -2,8 +2,8 @@ export default compose(
   injectSheet({
     Element: {
       borderRight: '1px solid',
-      padding: '0 8%',
-      fontSize: '1.5em',
+      padding: '0 3%',
+      fontSize: '1em',
     },
   })
 )( ({ classes, children }) =>  { 
