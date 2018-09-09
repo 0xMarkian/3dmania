@@ -10,13 +10,20 @@ export default {
   baseFontColor: 'white',
   baseFontSize: '18px',
   highlightedColor: '#00f19f',
+  secondAccentColor: 'white',
+
   defaultSection: {
     padding: '5% 0',
   },
+
   breakpoints: {
     sm: { lt: smMedia('max'), gt: smMedia('min') },
     md: { lt: mdMedia('max'), gt: mdMedia('min') },
     lg: { lt: lgMedia('max'), gt: lgMedia('min') },
     xl: { lt: xlMedia('max'), gt: xlMedia('min') },
   },
+
+  LongBoardProject: {
+    accentColor: '#239BFC',
+  }
 }

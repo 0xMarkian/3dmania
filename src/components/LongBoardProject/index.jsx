@@ -3,18 +3,29 @@ import { CompanyBrand, TechStack, About } from '../ProjectSection'
 
 import BackgroundPhoto from './background.jpg'
 
-const sectionColor = '#45C5FC'
+const { LongBoardProject: LongBoardProjectStyles } = commonStyles
 export default compose(
   injectSheet({
     LongBoardProject: {
       backgroundImage: `url(${ BackgroundPhoto })`,
       height: '700px',
-      color: sectionColor,
+      color: LongBoardProjectStyles.accentColor,
       textAlign: 'right',
+      '&:before': {
+        display: 'block',
+        content: '""',
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: 'black',
+        opacity: '.3',
+      }
     },
     wrapper: {
       float: 'right',
-      maxWidth: '600px',
+      maxWidth: '500px',
     },
   })
 )( ({ classes }) => (

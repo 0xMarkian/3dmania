@@ -1,7 +1,7 @@
 export default compose(
   injectSheet({
     About: {
-      fontSize: '3em',
+      fontSize: '2.5em',
       fontWeight: 'bold',
     }
   })
