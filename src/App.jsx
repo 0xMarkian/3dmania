@@ -5,6 +5,8 @@ import {Container} from 'reactstrap'
 import Nav from 'components/Nav';
 import Header from 'components/Header'
 import ProcessSection from 'components/ProcessSection'
+import ConnectSection from 'components/ConnectSection'
+import Footer from 'components/Footer'
 
 @injectSheet({
   App: {
@@ -30,6 +32,8 @@ class App extends Component {
         <Nav />
         <Header />
         <ProcessSection />
+        <ConnectSection />
+        <Footer />
       </Container>
     );
   }

@@ -2,7 +2,7 @@ export default injectSheet({
   Nav: {
     width: '100%',
     zIndex: 2,
-    background: 'rgba(36, 36, 36, 0.8)',
+    background: 'rgba(36, 36, 36, 0.9)',
     position: 'fixed',
     padding: '25px 50px',
   },
