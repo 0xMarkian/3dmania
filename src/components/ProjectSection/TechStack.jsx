@@ -9,7 +9,7 @@ export default compose(
 )( ({ classes, children }) =>  { 
   return (
     <div>
-      { children.map( child => <span className={classes.Element}>{ child }</span>) }
+      { children.map( (child, key) => <span key={key} className={classes.Element}>{ child }</span>) }
     </div>
   )
 })

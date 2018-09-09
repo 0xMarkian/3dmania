@@ -1,8 +1,8 @@
-export default injectSheet({
+export default compose(injectSheet({
   Nav: {
     width: '100%',
     zIndex: 2,
-    background: 'rgba(36, 36, 36, 0.8)',
+    background: 'rgba(36, 36, 36, 0.9)',
     position: 'fixed',
     padding: '25px 50px',
   },
@@ -22,7 +22,7 @@ export default injectSheet({
       color: 'white',
     },
   },
-})(
+}), hot(module))(
   ({ classes }) => (
     <nav className={classes.Nav}>
       <h1 className={classes.BrandTitle}>3D Mania</h1>
