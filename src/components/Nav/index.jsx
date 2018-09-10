@@ -104,7 +104,7 @@ class Nav extends React.Component {
           >
             {
               sections.map(({id, name}) => (
-                <a href={'#'+id} key={id} className={classes.NavLink}>{name}</a>
+                <AnchorLink href={'#'+id} key={id} className={classes.NavLink}>{name}</AnchorLink>
               ))
             }
           </Scrollspy>
