@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-serve",
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack && cp ./src/favicon.ico ./build/favicon.ico",
     "format": "prettier --write 'packages/**/*.js'",
     "test": "jest --watchAll --coverage",
     "deploy": "git pull && yarn && yarn build && pm2 restart ./server.js"
