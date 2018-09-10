@@ -34,6 +34,11 @@ const {breakpoints} = commonStyles
       color: 'white',
     },
   },
+  NavLinkActive: {
+    fontWeight: 500,
+    color: 'white',
+    fontSize: '0.85em',
+  },
   [breakpoints.md.lt]: {
     NavLink: {
       textAlign: 'center',
@@ -94,7 +99,7 @@ class Nav extends React.Component {
         <Collapse isOpen={isNavbarOpen} className={classes.NavLinksWrapper}>
           <Scrollspy
             items={sectionIds}
-            currentClassName='active'
+            currentClassName={classes.NavLinkActive}
             componentTag='div'
           >
             {
