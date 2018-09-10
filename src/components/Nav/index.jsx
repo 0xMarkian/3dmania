@@ -73,31 +73,33 @@ const {breakpoints} = commonStyles
 class Nav extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {navbarOpen: false}
+    this.state = {isNavbarOpen: false}
     this.toggleNavbar = this.toggleNavbar.bind(this)
   }
 
   toggleNavbar() {
-    this.setState(state => ({navbarOpen: !state.navbarOpen}))
+    this.setState(state => ({isNavbarOpen: !state.isNavbarOpen}))
   }
 
   render() {
     const {classes, sections} = this.props
-    const {navbarOpen} = this.state
+    const {isNavbarOpen} = this.state
+
+    const sectionIds = sections.map(section => section.id)
     
     return (<div className={classes.NavWrapper}>
       <nav className={classes.Nav}>
         <h1 className={classes.BrandTitle}>3D Mania</h1>
         <a className={classes.HamburgerIcon} onClick={this.toggleNavbar}><FaBars /></a>
-        <Collapse isOpen={navbarOpen} className={classes.NavLinksWrapper}>
+        <Collapse isOpen={isNavbarOpen} className={classes.NavLinksWrapper}>
           <Scrollspy
-            items={sections.map(section => section.id)}
+            items={sectionIds}
             currentClassName='active'
             componentTag='div'
           >
             {
-              sections.map((section, index) => (
-                <a href={`#${section.id}`} key={index} className={classes.NavLink}>{section.name}</a>
+              sections.map(({id, name}) => (
+                <a href={'#'+id} key={id} className={classes.NavLink}>{name}</a>
               ))
             }
           </Scrollspy>
