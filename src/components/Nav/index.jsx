@@ -1,10 +1,11 @@
+import { Collapse } from 'reactstrap'
 import Scrollspy from 'react-scrollspy'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { FaBars } from 'react-icons/fa'
 
 const {breakpoints} = commonStyles
 
-@injectSheet({
+@injectSheet(theme => ({
   NavWrapper: {
     width: '100%',
     zIndex: 5,
@@ -14,9 +15,6 @@ const {breakpoints} = commonStyles
   Nav: {
     padding: '25px 50px',
     color: '#bbb',
-  },
-  NavOpen: {
-    height: '100vh',
   },
   BrandTitle: {
     fontSize: '1.2em',
@@ -37,11 +35,16 @@ const {breakpoints} = commonStyles
     },
   },
   [breakpoints.md.lt]: {
+    NavLink: {
+      textAlign: 'center',
+      margin: '2em 0',
+      display: 'block',
+    },
     HamburgerIcon: {
-    transition: 'all 0.5s ease',
-    'float': 'right',
-     display: 'block',
-     '&:hover': {
+      transition: 'all 0.5s ease',
+      'float': 'right',
+      display: 'block',
+      '&:hover': {
         color: 'white',
       },
     },
@@ -49,32 +52,24 @@ const {breakpoints} = commonStyles
       width: '100%',
       fontSize: '1.5em',
     },
-    NavLinksWrapperOpen: {
-      display: 'block',
-    },
-    NavLinksWrapperClosed: {
-      display: 'none',
-    },
-    NavLink: {
-      textAlign: 'center',
-      margin: '2em 0',
-      display: 'block',
-    },
   },
   [breakpoints.md.gt]: {
+    NavLinksWrapper: {
+      display: 'block!important',
+    },
     HamburgerIcon: {
       display: 'none',
     },
-
   },
   Warning: {
     width: '100%',
     fontWeight: 500,
+    display: 'inline-block',
     textAlign: 'center',
     color: 'white',
-    background: '#E7CD37',
+    background: theme.warningColor,
   },
-})
+}))
 class Nav extends React.Component {
   constructor(props) {
     super(props)
@@ -89,33 +84,26 @@ class Nav extends React.Component {
   render() {
     const {classes, sections} = this.props
     const {navbarOpen} = this.state
-    const NavLinksWrapperClassName = [
-      classes.NavLinksWrapper,
-      navbarOpen ? classes.NavLinksWrapperOpen : classes.NavLinksWrapperClosed
-    ].join(' ')
     
-    const NavClassName = [classes.Nav, (navbarOpen && classes.NavOpen) || ''].join(' ')
-
     return (<div className={classes.NavWrapper}>
-      <nav className={NavClassName}>
+      <nav className={classes.Nav}>
         <h1 className={classes.BrandTitle}>3D Mania</h1>
         <a className={classes.HamburgerIcon} onClick={this.toggleNavbar}><FaBars /></a>
-        <div className={NavLinksWrapperClassName}>
+        <Collapse isOpen={navbarOpen} className={classes.NavLinksWrapper}>
           <Scrollspy
-            items={sections}
+            items={sections.map(section => section.id)}
             currentClassName='active'
             componentTag='div'
           >
-            <AnchorLink className={classes.NavLink} href={`#${sections[0]}`}>Header</AnchorLink>
-            <AnchorLink className={classes.NavLink} href={`#${sections[1]}`}>Process</AnchorLink>
-            <AnchorLink className={classes.NavLink} href={`#${sections[2]}`}>Longboard</AnchorLink>
-            <AnchorLink className={classes.NavLink} href={`#${sections[3]}`}>Farmbot</AnchorLink>
-            <AnchorLink className={classes.NavLink} href={`#${sections[4]}`}>Connect us</AnchorLink>
-            <AnchorLink className={classes.NavLink} href={`#${sections[5]}`}>About us</AnchorLink>
+            {
+              sections.map((section, index) => (
+                <a href={`#${section.id}`} key={index} className={classes.NavLink}>{section.name}</a>
+              ))
+            }
           </Scrollspy>
-        </div>
+        </Collapse>
       </nav>
-      <div className={classes.Warning}>Site is still in development. Do not judge strictly.</div>
+      <span className={classes.Warning}>Site is still in development. Don't judge strictly.</span>
     </div>)
   }
 }

@@ -25,18 +25,50 @@ class App extends React.Component {
   render() {
     const { classes } = this.props
 
-    const sections = ['header-section', 'process-section', 'longboard-project-section', 'farmbot-project-section', 'connect-section', 'about-section']
+    const sections = [
+      {
+        id: 'header-section',
+        name: 'Header',
+        content: Header,
+      },
+      {
+        id: 'process-section',
+        name: 'Process',
+        content: ProcessSection,
+      },
+      {
+        id: 'longboard-project-section',
+        name: 'Longboard',
+        content: LongBoardProject,
+      },
+      {
+        id: 'farmbot-project-section',
+        name: 'Farmbot',
+        content: FarmBotProject,
+      },
+      {
+        id: 'connect-section',
+        name: 'Connect Us',
+        content: ConnectSection,
+      },
+      {
+        id: 'about-section',
+        name: 'About Us',
+        content: Footer,
+      }
+    ]
+
+    const filteredSections = sections.map(({id, name}) => ({id, name}))
 
     return (
       <ThemeProvider theme={theme}>
         <Container fluid={true} className={classes.App}>
-          <Nav sections={sections}/>
-          <Header id='header-section' />
-          <ProcessSection id='process-section' />
-          <LongBoardProject id='longboard-project-section' />
-          <FarmBotProject id='farmbot-project-section' />
-          <ConnectSection id='connect-section' />
-          <Footer id='about-section' />
+          <Nav sections={filteredSections}/>
+          {
+            sections.map((section, index) => (
+              <section.content key={index} id={section.id} />
+            ))
+          }
         </Container>
       </ThemeProvider>
     );

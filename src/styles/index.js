@@ -10,6 +10,7 @@ export default {
   baseColor: '#242424',
   highlightedColor: '#00f19f',
   secondAccentColor: 'white',
+  warningColor: '#E7CD37',
 
   baseFontColor: 'white',
   baseFontSize: '18px',

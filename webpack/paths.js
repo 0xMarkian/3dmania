@@ -8,5 +8,6 @@ module.exports = {
   imagesFolder: 'images',
   fontsFolder: 'fonts',
   cssFolder: '.',
+  buildRoot: '.',
   jsFolder: 'js',
 };
