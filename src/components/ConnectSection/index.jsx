@@ -57,7 +57,7 @@ export default compose(injectSheet(theme => ({
           <h1 className={classes.Title}>Want to get connected? <span className={classes.NoBr}>Let's chat.</span></h1>
       </Row>
       <Row>
-        <AnchorLink href='#about-section' className={classes.Button}>Contact us today</AnchorLink>
+        <AnchorLink href='#footer-section' className={classes.Button}>Contact us today</AnchorLink>
       </Row>
     </Section>
   )

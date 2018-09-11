@@ -37,7 +37,7 @@ const {breakpoints} = commonStyles
     fontWeight: 500,
     color: 'white',
   },
-  [breakpoints.md.lt]: {
+  [breakpoints.lg.lt]: {
     NavLink: {
       textAlign: 'center',
       margin: '2em 0',
@@ -56,7 +56,7 @@ const {breakpoints} = commonStyles
       fontSize: '1.5em',
     },
   },
-  [breakpoints.md.gt]: {
+  [breakpoints.lg.gt]: {
     NavLinksWrapper: {
       display: 'block!important',
     },
