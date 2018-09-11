@@ -1,16 +1,16 @@
 const { breakpoints } = commonStyles
 
-export default compose(injectSheet({
+export default {
   FullStep: {
     width: '100%',
     paddingTop: '100%',
     background: commonStyles.baseColor,
     borderRadius: '50%',
   },
-  HalfStep: {
+  DualStep: {
     extend: 'FullStep',
   },
-  AdditionalHalfStep: {
+  SubStep: {
     extend: 'FullStep',
     zIndex: 2,
     width: '60%',
@@ -30,7 +30,7 @@ export default compose(injectSheet({
   },
   StepTitle: {
     marginTop: '30%',
-    fontSize: '0.9em',
+    fontSize: '1.2em',
     color: commonStyles.highlightedColor,
   },
   StepDesc: {
@@ -54,17 +54,4 @@ export default compose(injectSheet({
       '&:last-child': {marginRight: '-60%'},
     },
   },
-}), hot(module))(
-  ({ classes, type, content }) => (
-    <div className={classes[type]}>
-      <div className={classes.StepContent}>
-        <h3 className={classes.StepTitle}>{content.title}</h3>
-        {content.desc &&
-          <ul className={classes.StepDesc}>
-            {content.desc.map((descText, descIndex) => <li key={descIndex}>{descText}</li>)}
-          </ul>
-        }
-      </div>
-    </div>
-  )
-)
+}
