@@ -10,6 +10,7 @@ import LongBoardProject from 'components/LongBoardProject'
 import FarmBotProject from 'components/FarmBotProject'
 import ConnectSection from 'components/ConnectSection'
 import Footer from 'components/Footer'
+import AboutSection from 'components/AboutSection'
 
 @injectSheet({
   App: {
@@ -47,12 +48,17 @@ class App extends React.Component {
         Component: FarmBotProject,
       },
       {
+        id: 'about-section',
+        name: 'Mission & Vision',
+        Component: AboutSection,
+      },
+      {
         id: 'connect-section',
         name: 'Contact Us',
         Component: ConnectSection,
       },
       {
-        id: 'about-section',
+        id: 'footer-section',
         name: 'About Us',
         Component: Footer,
       }

@@ -2,12 +2,10 @@ import { Row, Col } from 'reactstrap'
 import Section from 'components/Section'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-const { breakpoints } = commonStyles
-
-export default compose(injectSheet(theme => ({
+export default compose(injectSheet(({ConnectSection, breakpoints}) => ({
   SectionWrapper: {
     paddingTop: '8%',
-    background: theme.ConnectSection.accentColor,
+    background: ConnectSection.accentColor,
   },
   Subtitle: {
     fontWeight: 500,
@@ -29,7 +27,7 @@ export default compose(injectSheet(theme => ({
     fontWeight: 500,
     '&:hover': {
       background: 'white',
-      color: `${theme.ConnectSection.accentColor}!important`,
+      color: `${ConnectSection.accentColor}!important`,
     },
   },
   [breakpoints.md.lt]: {
@@ -57,7 +55,7 @@ export default compose(injectSheet(theme => ({
           <h1 className={classes.Title}>Want to get connected? <span className={classes.NoBr}>Let's chat.</span></h1>
       </Row>
       <Row>
-        <AnchorLink href='#about-section' className={classes.Button}>Contact us today</AnchorLink>
+        <AnchorLink href='#footer-section' className={classes.Button}>Contact us today</AnchorLink>
       </Row>
     </Section>
   )

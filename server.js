@@ -1,6 +1,19 @@
 var express = require('express')
+var fs = require('fs')
+var http = require('http')
+var https = require('https')
 var app = express()
 
 app.use(express.static('build'))
 
-app.listen(80, function() {console.log('Listening on port 80...')})
+var credentials = {
+  key: fs.readFileSync('security/private.key', 'utf8'),
+  cert: fs.readFileSync('security/certificate.crt', 'utf8'),
+  ca: fs.readFileSync('security/ca_bundle.crt', 'utf8'),
+}
+
+var httpServer = http.createServer(app)
+var httpsServer = https.createServer(credentials, app)
+
+httpServer.listen(80)
+httpsServer.listen(443)

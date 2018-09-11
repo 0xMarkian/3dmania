@@ -1,8 +1,8 @@
 import {Container, Row, Col} from 'reactstrap'
 
-const { defaultSection, breakpoints } = commonStyles
+const { } = commonStyles
 
-export default compose(injectSheet({
+export default compose(injectSheet(({defaultSection, breakpoints, highlightedColor}) => ({
   SectionWrapper: {
     ...defaultSection,
     marginTop: '5%',
@@ -14,7 +14,7 @@ export default compose(injectSheet({
     fontWeight: 'bold',
   },
   HighlightedText: {
-    color: commonStyles.highlightedColor,
+    color: highlightedColor,
   },
   Description: {
     color: '#bbb',
@@ -60,7 +60,7 @@ export default compose(injectSheet({
     SectionWrapper: {paddingTop: '30%'},
     Heading: {fontSize: '3em'}
   },
-}))(
+})))(
   ({ classes, ...props }) => (
     <header className={classes.SectionWrapper} {...props}>
       <Container>

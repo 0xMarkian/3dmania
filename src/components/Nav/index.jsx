@@ -3,9 +3,7 @@ import Scrollspy from 'react-scrollspy'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { FaBars } from 'react-icons/fa'
 
-const {breakpoints} = commonStyles
-
-@injectSheet(theme => ({
+@injectSheet(({breakpoints, warningColor}) => ({
   NavWrapper: {
     width: '100%',
     zIndex: 5,
@@ -37,7 +35,7 @@ const {breakpoints} = commonStyles
     fontWeight: 500,
     color: 'white',
   },
-  [breakpoints.md.lt]: {
+  [breakpoints.lg.lt]: {
     NavLink: {
       textAlign: 'center',
       margin: '2em 0',
@@ -56,7 +54,7 @@ const {breakpoints} = commonStyles
       fontSize: '1.5em',
     },
   },
-  [breakpoints.md.gt]: {
+  [breakpoints.lg.gt]: {
     NavLinksWrapper: {
       display: 'block!important',
     },
@@ -70,7 +68,7 @@ const {breakpoints} = commonStyles
     display: 'inline-block',
     textAlign: 'center',
     color: 'white',
-    background: theme.warningColor,
+    background: warningColor,
   },
 }))
 class Nav extends React.Component {
