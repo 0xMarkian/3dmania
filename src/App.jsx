@@ -29,45 +29,41 @@ class App extends React.Component {
       {
         id: 'header-section',
         name: 'Header',
-        content: Header,
+        Component: Header,
       },
       {
         id: 'process-section',
         name: 'Process',
-        content: ProcessSection,
+        Component: ProcessSection,
       },
       {
         id: 'longboard-project-section',
         name: 'Longboard',
-        content: LongBoardProject,
+        Component: LongBoardProject,
       },
       {
         id: 'farmbot-project-section',
         name: 'Farmbot',
-        content: FarmBotProject,
+        Component: FarmBotProject,
       },
       {
         id: 'connect-section',
         name: 'Connect Us',
-        content: ConnectSection,
+        Component: ConnectSection,
       },
       {
         id: 'about-section',
         name: 'About Us',
-        content: Footer,
+        Component: Footer,
       }
     ]
-
-    const filteredSections = sections.map(({id, name}) => ({id, name}))
 
     return (
       <ThemeProvider theme={theme}>
         <Container fluid={true} className={classes.App}>
-          <Nav sections={filteredSections}/>
+          <Nav sections={sections}/>
           {
-            sections.map((section, index) => (
-              <section.content key={index} id={section.id} />
-            ))
+            sections.map(({Component, id}) => <Component key={id} id={id} />)
           }
         </Container>
       </ThemeProvider>

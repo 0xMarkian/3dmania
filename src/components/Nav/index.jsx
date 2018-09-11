@@ -27,7 +27,6 @@ const {breakpoints} = commonStyles
   },
   NavLink: {
     color: '#bbb',
-    transition: 'all 0.5s ease',
     fontSize: '0.75em',
     margin: '0 1em',
     '&:hover': {
@@ -37,7 +36,6 @@ const {breakpoints} = commonStyles
   NavLinkActive: {
     fontWeight: 500,
     color: 'white',
-    fontSize: '0.85em',
   },
   [breakpoints.md.lt]: {
     NavLink: {
@@ -91,7 +89,7 @@ class Nav extends React.Component {
     const {isNavbarOpen} = this.state
 
     const sectionIds = sections.map(section => section.id)
-    
+
     return (<div className={classes.NavWrapper}>
       <nav className={classes.Nav}>
         <h1 className={classes.BrandTitle}>3D Mania</h1>
