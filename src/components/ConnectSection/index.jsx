@@ -2,7 +2,7 @@ import { Row, Col } from 'reactstrap'
 import Section from 'components/Section'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-export default compose(injectSheet(({ConnectSection}) => ({
+export default compose(injectSheet(({ConnectSection, breakpoints}) => ({
   SectionWrapper: {
     paddingTop: '8%',
     background: ConnectSection.accentColor,
