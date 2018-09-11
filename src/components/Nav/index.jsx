@@ -108,7 +108,7 @@ class Nav extends React.Component {
           </Scrollspy>
         </Collapse>
       </nav>
-      <span className={classes.Warning}>Site is still in development. Don't judge strictly.</span>
+      <span className={classes.Warning}>Site under development. Please don't judge strictly =)</span>
     </div>)
   }
 }
