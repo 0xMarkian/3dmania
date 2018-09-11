@@ -48,7 +48,7 @@ class App extends React.Component {
       },
       {
         id: 'connect-section',
-        name: 'Connect Us',
+        name: 'Contact Us',
         Component: ConnectSection,
       },
       {

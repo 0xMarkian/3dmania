@@ -1,44 +1,45 @@
 import {Container, Row, Col} from 'reactstrap'
-import {FaFacebookF, FaInstagram} from 'react-icons/fa'
+import {FaFacebookF, FaInstagram, FaLinkedinIn} from 'react-icons/fa'
 
 import Section from 'components/Section'
 
 
-const { defaultSection } = commonStyles
-
-const Link = injectSheet({
-  LinkWrapper: {
+const FooterSection = injectSheet({
+  SectionWrapper: {
     cursor: 'pointer',
-    display: 'block',
     marginTop: '2em',
-    '& *': {display: 'block'},
-    '&:hover span': {
-      color: 'white',
-    }
   },
-  LinkTitle: {
+  Title: {
    fontWeight: 500,
    fontSize: '1.25em',
    color: 'white',
   },
-  LinkSubtitle: {
-    marginTop: '1em',
+  Link: {
+    display: 'block',
     transition: 'color 0.5s ease',
     fontSize: '0.8em',
     color: '#777',
+    marginTop: '0.5em',
+    '&:first-of-type': {marginTop: '1em'},
+    '&:hover': {
+      color: 'white',
+    }
   },
 })(
-  ({classes, title, subtitle}) => (
-    <a className={classes.LinkWrapper}>
-      <span className={classes.LinkTitle}>{title}</span>
-      <span className={classes.LinkSubtitle}>{subtitle}</span>
-    </a>
+  ({classes, title, links}) => (
+    <Col md={4} className={classes.SectionWrapper}>
+      <span className={classes.Title}>{title}</span>
+      {
+        links.map(({url='#', text}, index) => (
+          <a key={index} href={url} target='_blank' className={classes.Link}>{text}</a>
+        ))
+      }
+    </Col>
   )
 )
 
-export default compose(injectSheet({
+export default compose(injectSheet(({defaultSection, breakpoints}) => ({
   SectionWrapper: {
-    ...defaultSection,
     padding: '3% 0',
   },
   BaseLink: {
@@ -68,33 +69,74 @@ export default compose(injectSheet({
       marginLeft: '2em',
     }
   },
-}))(
-  ({ classes, ...props }) => (
-    <footer className={classes.SectionWrapper} {...props}>
+  [breakpoints.md.lt]: {
+    SocialWrapper: {
+      padding: '5% 0',
+    },
+  },
+})))(
+  ({ classes, ...props }) => {
+    const socialMedia = [
+      {
+        url: 'https://www.facebook.com/3dmania.print',
+        Icon: FaFacebookF,
+      },
+      {
+        url: 'https://www.instagram.com/3d_mania/',
+        Icon: FaInstagram,
+      },
+      {
+        url: 'https://www.linkedin.com/company/3d-mania/',
+        Icon: FaLinkedinIn,
+      },
+    ]
+
+    const sections = [
+      {
+        title: 'New business enquiries',
+        links: [{
+          url: 'mailto:3dmania.print@gmail.com',
+          text: '3dmania.print@gmail.com',
+        },
+        {
+          url: 'tel:+380689212475',
+          text: '+38 (068) 921 24 75',
+        }]
+      },
+      {
+        title: 'Ivano-Frankivsk',
+        links: [{
+          url: 'https://goo.gl/maps/1LH9JiQxuFo',
+          text: "Sichovykh Stril'tsiv St. 23, 5th Floor, #506",
+        }],
+      },
+      {
+        title: 'Join our team',
+        links: [{text: 'Current openings'}],
+      },
+    ]
+
+    return (<footer className={classes.SectionWrapper} {...props}>
       <Container>
         <Row>
-          <Col md={8}>
-            <Link title='New business enquiries' subtitle='newbusiness@team.rehab' />
-          </Col>
-          <Col md={4}>
-            <Link title='Join our team' subtitle='Current openings' />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={4}>
-            <Link title='London' subtitle='118 Commercial Street, E1 6NF' />
-          </Col>
-          <Col md={4}>
-            <Link title='New York City' subtitle='1301 Avenue of the Americas 10th Floor, NY 10012' />
-          </Col>
-          <Col md={4}>
-            <Link title='Ivano-Frankivsk' subtitle='Sichovykh Striltsiv Str. 23, 5th Floor, IF 506' />
-          </Col>
+          {
+            sections.map(({title, links}, index) => (
+              <FooterSection title={title} links={links} key={index} />
+            ))
+          }
         </Row>
         <Row className={classes.SocialWrapper}>
-          <Col md={12}>
-            <a className={classes.SocialIcon}><FaFacebookF /></a>
-            <a className={classes.SocialIcon}><FaInstagram /></a>
+          <Col>
+            {
+              socialMedia.map(({url, Icon}, index) => (
+                <a
+                  key={index}
+                  className={classes.SocialIcon}
+                  href={url}
+                  target='_blank'
+                >{<Icon />}</a>
+              ))
+            }
           </Col>
         </Row>
         <Row className={classes.LegalWrapper}>
@@ -105,6 +147,6 @@ export default compose(injectSheet({
           </Col>
         </Row>
       </Container>
-    </footer>
-  )
+    </footer>)
+  }
 )

@@ -1,5 +1,6 @@
 import { Row, Col } from 'reactstrap'
 import Section from 'components/Section'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const { breakpoints } = commonStyles
 
@@ -19,6 +20,7 @@ export default compose(injectSheet(theme => ({
   Button: {
     cursor: 'pointer',
     display: 'inline-block',
+    color: 'white',
     padding: '1em 2em',
     border: '5px solid white',
     borderRadius: '5px',
@@ -55,7 +57,7 @@ export default compose(injectSheet(theme => ({
           <h1 className={classes.Title}>Want to get connected? <span className={classes.NoBr}>Let's chat.</span></h1>
       </Row>
       <Row>
-        <a className={classes.Button}>Email us today</a>
+        <AnchorLink href='#about-section' className={classes.Button}>Contact us today</AnchorLink>
       </Row>
     </Section>
   )
