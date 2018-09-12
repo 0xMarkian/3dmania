@@ -4,8 +4,6 @@ import Section from 'components/Section'
 import { FullStep, DualStep, SubStep, DescContent as StepDesc } from './Step'
 
 
-const { breakpoints } = commonStyles
-
 const Idea = () => (
   <FullStep title={'Idea'}/> 
 )
@@ -22,6 +20,10 @@ const Development = () => {
     <div>
       <DualStep title='Hardware'>
         <StepDesc>
+          <span>Digital Manufacturing <br/>
+            - CAD Design <br/>
+            - 3Dprint <br/>
+          Electronics Design</span>
         </StepDesc>
       </DualStep>
       <DualStep title='Software'/>
@@ -43,11 +45,11 @@ const Delivery = () => {
   )
 }
 
-export default compose(injectSheet({
+export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) => ({
   ProcessSection: {
     background: 'white',
     paddingTop: '5%',
-    color: commonStyles.baseColor,
+    color: baseColor,
   },
   Title: {
     display: 'none',
@@ -55,9 +57,10 @@ export default compose(injectSheet({
     fontWeight: 'bold',
   },
   HighlightedText: {
-    color: commonStyles.highlightedColor,
+    color: highlightedColor,
   },
   Subtitle: {
+    fontWeight: 'normal',
     color: '#bbb',
   },
   StepsContainer: {
@@ -90,43 +93,8 @@ export default compose(injectSheet({
   NoBr: {
     whiteSpace: 'nowrap',
   },
-}), hot(module))(
+})))(
   ({ classes }) => {
-    // const processSchema = [
-    //   {
-    //     title: 'Idea',
-    //     type: 'full',
-    //   },
-    //   {
-    //     title: 'Agreement',
-    //     desc: ['point 1', 'point 2', 'point 3'],
-    //     type: 'full',
-    //   },
-    //   {
-    //     type: 'half',
-    //     top: {
-    //       title: 'Hardware',
-    //       desc: ['point 1', 'point 2', 'point 2'],
-    //     },
-    //     bottom: {
-    //       title: 'Software',
-    //       desc: ['point 1', 'point 2', 'point 2'],
-    //     },
-    //   },
-    //   {
-    //     type: 'dual',
-    //     primary: {
-    //       title: 'Testing',
-    //     },
-    //     secondary: {
-    //       title: 'Optimization',
-    //     },
-    //   },
-    //   {
-    //     type: 'full',
-    //     title: 'Delivery',
-    //   }
-    // ]
 
     return (<Section className={classes.ProcessSection} id='process-section'>
       <h4 className={classes.Subtitle}>Process</h4>
@@ -134,15 +102,15 @@ export default compose(injectSheet({
         <br/>
         <span className={classes.HighlightedText}>ensuring the work really works.</span>
       </h1>
-    <Row className={classes.StepsContainer}>{
-      [Idea, Agreement, Development, Testing, Delivery].map((Item, i) =>
+      <Row className={classes.StepsContainer}>{
+        [Idea, Agreement, Development, Testing, Delivery].map((Item, i) =>
           <Col
             className={classes.StepWrapper} key={i}
             xs={{size: 6, offset: 3}}
             md={{size: 4, offset: 4}}
             lg={{size: 2, offset: (i == 0 ? 1:0)}}
           >
-            <Item/> 
+            <Item/>
           </Col>
         )}
       </Row>

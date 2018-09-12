@@ -1,12 +1,12 @@
 const { breakpoints } = commonStyles
 
-const styles = {
+const Step = injectSheet(({baseColor, highlightedColor, breakpoints}) => ({
   Step: {
     width: '100%',
     paddingTop: '100%',
-    background: commonStyles.baseColor,
+    background: baseColor,
     borderRadius: '50%',
-    overflow: 'auto',
+    overflow: 'hidden',
   },
   FullStep: {
     extend: 'Step'
@@ -29,20 +29,17 @@ const styles = {
   },
   StepContent: {
     width: '100%',
+    height: '100%',
     position: 'absolute',
     top: 0,
     textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   StepTitle: {
-    marginTop: '30%',
-    marginBottom: '12%',
     fontSize: '1.2em',
-    color: commonStyles.highlightedColor,
-  },
-  StepDesc: {
-    color: 'white',
-    fontSize: '0.7em',
-    listStyle: 'none',
+    color: highlightedColor,
   },
   [breakpoints.lg.gt]: {
     HalfStep: {
@@ -60,10 +57,8 @@ const styles = {
       '&:last-child': {marginRight: '-60%'},
     },
   },
-}
-const Step = injectSheet({
-  ...styles,
-})(({ classes, type='', title='', children }) => (
+})
+)(({ classes, type='', title='', children }) => (
     <div className={classes[type]}>
       <div className={classes.StepContent}>
         <h3 className={classes.StepTitle}>{title}</h3>
