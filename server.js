@@ -4,6 +4,14 @@ var http = require('http')
 var https = require('https')
 var app = express()
 
+app.get(function(req, res) {
+  if(!req.secure) {
+    var secureUrl = "https://" + req.headers['host'] + req.url;
+    res.writeHead(301, { "Location":  secureUrl });
+    res.end();
+  }
+})
+
 app.use(express.static('build'))
 
 var credentials = {
