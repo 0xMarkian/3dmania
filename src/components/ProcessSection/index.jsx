@@ -78,6 +78,7 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
     Subtitle: {
       textAlign: 'center',
     },
+
   },
   [breakpoints.lg.lt]: {
     StepWrapper: {
@@ -106,7 +107,7 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
         [Idea, Agreement, Development, Testing, Delivery].map((Item, i) =>
           <Col
             className={classes.StepWrapper} key={i}
-            xs={{size: 8, offset: 2}}
+            xs={{size: 6, offset: 3}}
             md={{size: 4, offset: 4}}
             lg={{size: 2, offset: (i == 0 ? 1:0)}}
           >

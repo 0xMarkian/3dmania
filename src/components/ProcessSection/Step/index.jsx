@@ -42,7 +42,7 @@ const Step = injectSheet(({baseColor, highlightedColor, breakpoints}) => ({
     color: highlightedColor,
   },
   [breakpoints.lg.gt]: {
-    HalfStep: {
+    DualStep: {
       margin: '0 auto',
       '&:first-child': {
         marginBottom: '20%',
@@ -50,11 +50,11 @@ const Step = injectSheet(({baseColor, highlightedColor, breakpoints}) => ({
     },
   },
   [breakpoints.lg.lt]: {
-    HalfStep: {
+    DualStep: {
       display: 'inline-block',
-      margin: '0 10%',
-      '&:first-child': {marginLeft: '-60%'},
-      '&:last-child': {marginRight: '-60%'},
+      transform: 'scale(0.9)',
+      '&:first-child': {marginLeft: '-50%'},
+      '&:last-child': {marginRight: '-50%'},
     },
   },
 })
