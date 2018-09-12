@@ -33,6 +33,7 @@ export default compose(injectSheet(({ConnectSection, breakpoints}) => ({
   [breakpoints.md.lt]: {
     Title: {
       textAlign: 'center',
+      fontSize: '2em',
     },
     Subtitle: {
       width: '100%',
