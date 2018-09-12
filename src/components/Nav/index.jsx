@@ -64,7 +64,6 @@ import { FaBars } from 'react-icons/fa'
   },
   Warning: {
     width: '100%',
-    fontWeight: 500,
     display: 'inline-block',
     textAlign: 'center',
     color: 'white',
@@ -76,10 +75,15 @@ class Nav extends React.Component {
     super(props)
     this.state = {isNavbarOpen: false}
     this.toggleNavbar = this.toggleNavbar.bind(this)
+    this.closeNavbar = this.closeNavbar.bind(this)
   }
 
   toggleNavbar() {
     this.setState(state => ({isNavbarOpen: !state.isNavbarOpen}))
+  }
+
+  closeNavbar() {
+    this.setState({isNavbarOpen: false})
   }
 
   render() {
@@ -100,7 +104,14 @@ class Nav extends React.Component {
           >
             {
               sections.map(({id, name}) => (
-                <AnchorLink href={'#'+id} key={id} className={classes.NavLink}>{name}</AnchorLink>
+                <AnchorLink
+                  onClick={this.closeNavbar}
+                  href={'#'+id}
+                  key={id}
+                  className={classes.NavLink}
+                >
+                  {name}
+                </AnchorLink>
               ))
             }
           </Scrollspy>

@@ -22,9 +22,6 @@ const Development = () => {
     <div>
       <DualStep title='Hardware'>
         <StepDesc>
-          <div>
-           
-          </div>
         </StepDesc>
       </DualStep>
       <DualStep title='Software'/>
