@@ -7,6 +7,7 @@ import { Row, Col } from 'reactstrap'
 import img1 from './img1.JPG'
 import img2 from './img2.JPG'
 import img3 from './img3.JPG'
+import BrandLogo from './BrandLogo.png'
 
 const PhotoSection = compose(
   injectSheet({
@@ -29,12 +30,12 @@ const PhotoSection = compose(
       left: '60%',
       top: '24%',
       transform: 'rotate(56deg)',
-    }
+    },
   }),
 )( ({ classes }) => (
   <Col className={classes.PhotoSection} md={6}>
-    <img className={`${ classes.underImages } ${classes.img3}`} src={img3}/> 
-    <img className={`${ classes.underImages } ${classes.img2}`} src={img2}/> 
+    <img className={`${ classes.underImages } ${classes.img3}`} src={img3}/>
+    <img className={`${ classes.underImages } ${classes.img2}`} src={img2}/>
     <img className={classes.img1} src={img1}/> 
   </Col>
 ))
@@ -42,13 +43,22 @@ const PhotoSection = compose(
 const TextSection = injectSheet({
   TextSection: {
     zIndex: 3,
-  }
+  },
+  BrandLogoLink: {
+    display: 'inline-block',
+  },
 })( ({ classes }) => (
     <Col className={classes.TextSection} md={6}>
-      <CompanyBrand>Lion's Shade</CompanyBrand> 
+      <CompanyBrand>
+        <a className={classes.BrandLogoLink} href='http://www.lionsshade.com/' target='_blank'>
+          <img src={BrandLogo} alt="Lion's Shade" />
+        </a>
+      </CompanyBrand>
       <p>Work Automation</p>
       <About>Helping farm hobbyists manage their garden with ease</About>
+      <TechStack>{ ['Industrial Design', 'Digital Manufacturing', '3Dprint', 'CAD Modelling'] }</TechStack>
     </Col>
+    
 ))
 
 export default compose(
@@ -63,8 +73,8 @@ export default compose(
 )( ({ classes, ...props }) => (
   <Section {...props} className={classes.FarmBotProject}>
     <Row>
-      <TextSection/> 
-      <PhotoSection/>    
+      <TextSection/>
+      <PhotoSection/>
     </Row>
   </Section>
 ))
