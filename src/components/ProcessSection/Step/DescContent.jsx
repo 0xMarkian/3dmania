@@ -8,7 +8,6 @@ export default injectSheet( ({ breakpoints, secondAccentColor }) => ({
   },
   [breakpoints.md.lt]: {
     Desc: {
-      fontSize: '.7em',
       padding: '0 5%',
     }
   },
