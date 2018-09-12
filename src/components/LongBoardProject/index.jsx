@@ -4,22 +4,27 @@ import AccentExp from 'components/AccentExp'
 
 import BackgroundPhoto from './background.jpg'
 
-const { LongBoardProject: LongBoardProjectStyles } = commonStyles
 export default compose(
-  injectSheet(theme => ({
+  injectSheet(({Section, LongBoardProject: LongBoardProjectStyles, breakpoints}) => ({
     LongBoardProject: {
       backgroundImage: `url(${ BackgroundPhoto })`,
-      height: '700px',
+      backgroundPosition: 'center',
       color: LongBoardProjectStyles.accentColor,
-      textAlign: 'right',
       '&:before': {
-        ...theme.Section.BlackLayer,
+        ...Section.BlackLayer,
         opacity: '.65',
       }
     },
     wrapper: {
-      float: 'right',
       maxWidth: '700px',
+    },
+    [breakpoints.md.lg]: {
+      wrapper: {
+        float: 'right',
+      },
+      LongBoardProject: {
+        textAlign: 'right',
+      },
     },
   })
 ))( ({ classes, theme, ...props }) => (

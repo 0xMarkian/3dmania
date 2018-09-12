@@ -69,6 +69,13 @@ import { FaBars } from 'react-icons/fa'
     color: 'white',
     background: warningColor,
   },
+  [breakpoints.md.lt]: {
+    Warning: {
+      '& span': {
+        display: 'block',
+      }
+    },
+  },
 }))
 class Nav extends React.Component {
   constructor(props) {
@@ -118,7 +125,10 @@ class Nav extends React.Component {
           </Scrollspy>
         </Collapse>
       </nav>
-      <span className={classes.Warning}>Site under development. Please don't judge strictly =)</span>
+      <span className={classes.Warning}>
+        <span>Site under development. </span>
+        <span>Please don't judge strictly =)</span>
+      </span>
     </div>)
   }
 }

@@ -57,7 +57,7 @@ export default compose(injectSheet(({defaultSection, breakpoints, highlightedCol
   },
 
   [breakpoints.sm.lt]: {
-    SectionWrapper: {paddingTop: '30%'},
+    SectionWrapper: {paddingTop: '40%'},
     Heading: {fontSize: '3em'}
   },
 })))(

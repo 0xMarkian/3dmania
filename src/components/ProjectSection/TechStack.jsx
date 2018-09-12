@@ -7,9 +7,10 @@ export default compose(
     },
     [breakpoints.md.lt]: {
       Element: {
-        '&:first-child': {
-          paddingLeft: 0,
-        },
+        marginTop: '0.25em',
+        padding: 0,
+        display: 'block',
+        border: 'none',
       },
     },
   }))
