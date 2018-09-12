@@ -25,7 +25,7 @@ const Step = injectSheet(({baseColor, highlightedColor, breakpoints}) => ({
     right: '-18%',
     top: '-18%',
     color: 'white',
-    fontSize: '0.7em',
+    fontSize: '0.6em',
   },
   StepContent: {
     width: '100%',
