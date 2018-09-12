@@ -98,6 +98,7 @@ class Nav extends React.Component {
         <a className={classes.HamburgerIcon} onClick={this.toggleNavbar}><FaBars /></a>
         <Collapse isOpen={isNavbarOpen} className={classes.NavLinksWrapper}>
           <Scrollspy
+            offset={-20}
             items={sectionIds}
             currentClassName={classes.NavLinkActive}
             componentTag='div'
