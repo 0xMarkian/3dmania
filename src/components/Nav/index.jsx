@@ -7,8 +7,14 @@ import { FaBars } from 'react-icons/fa'
   NavWrapper: {
     width: '100%',
     zIndex: 5,
+    transition: 'all 0.5s ease',
     background: 'rgba(36, 36, 36, 0.9)',
     position: 'fixed',
+  },
+  NavWrapperOpen: {
+    extend: 'NavWrapper',
+
+    background: 'rgba(36, 36, 36, 1)',
   },
   Nav: {
     padding: '25px 50px',
@@ -97,9 +103,12 @@ class Nav extends React.Component {
     const {classes, sections} = this.props
     const {isNavbarOpen} = this.state
 
-    const sectionIds = sections.map(section => section.id)
+    const NavWrapperClassName = isNavbarOpen ? classes.NavWrapperOpen : classes.NavWrapper
 
-    return (<div className={classes.NavWrapper}>
+    const sectionIds = sections.map(section => section.id)
+    
+
+    return (<div className={NavWrapperClassName}>
       <nav className={classes.Nav}>
         <h1 className={classes.BrandTitle}>3D Mania</h1>
         <a className={classes.HamburgerIcon} onClick={this.toggleNavbar}><FaBars /></a>
