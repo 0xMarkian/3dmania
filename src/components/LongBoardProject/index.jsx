@@ -18,7 +18,7 @@ export default compose(
     wrapper: {
       maxWidth: '700px',
     },
-    [breakpoints.md.lg]: {
+    [breakpoints.md.gt]: {
       wrapper: {
         float: 'right',
       },

@@ -8,6 +8,7 @@ import Header from 'components/Header'
 import ProcessSection from 'components/ProcessSection'
 import LongBoardProject from 'components/LongBoardProject'
 import FarmBotProject from 'components/FarmBotProject'
+import SkeletonProject from 'components/SkeletonProject'
 import ConnectSection from 'components/ConnectSection'
 import Footer from 'components/Footer'
 import AboutSection from 'components/AboutSection'
@@ -46,6 +47,11 @@ class App extends React.Component {
         id: 'farmbot-project-section',
         name: 'Farmbot',
         Component: FarmBotProject,
+      },
+      {
+        id: 'skeleton-project-section',
+        name: 'Skeleton',
+        Component: SkeletonProject,
       },
       {
         id: 'about-section',

@@ -1,22 +1,30 @@
 export default compose(
   injectSheet(({breakpoints}) => ({
     Element: {
-      borderRight: '1px solid',
-      padding: '0 3%',
+      '&:not(:first-child)': {
+        paddingLeft: '3%',
+      },
+      '&:not(:last-child)': {
+        paddingRight: '3%',
+        borderRight: '1px solid',
+      },
       fontSize: '1em',
+    },
+    Wrapper: {
+      width: '100%',
     },
     [breakpoints.md.lt]: {
       Element: {
         marginTop: '0.25em',
-        padding: 0,
+        padding: '0!important',
+        border: 'none!important',
         display: 'block',
-        border: 'none',
       },
     },
   }))
 )( ({ classes, children }) => {
   return (
-    <div>
+    <div className={classes.Wrapper}>
       { children.map( (child, key) => <span key={key} className={classes.Element}>{ child }</span>) }
     </div>
   )

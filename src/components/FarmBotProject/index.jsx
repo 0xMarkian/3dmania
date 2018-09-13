@@ -40,34 +40,47 @@ const PhotoSection = compose(
   </Col>
 ))
 
-const TextSection = injectSheet({
+const TextSection = injectSheet(({breakpoints, highlightedColor}) => ({
   TextSection: {
     zIndex: 3,
   },
   BrandLogoLink: {
     display: 'inline-block',
+    '& img': {
+      width: '70%',
+    },
   },
-})( ({ classes }) => (
+  Subtitle: {
+    fontSize: '2em',
+    color: highlightedColor,
+  },
+  [breakpoints.md.lt]: {
+    Subtitle: {
+      fontSize: '1em',
+    },
+  },
+  Title: {
+    fontSize: '2.4em',
+  },
+}))( ({ classes }) => (
     <Col className={classes.TextSection} md={6}>
       <CompanyBrand>
         <a className={classes.BrandLogoLink} href='http://www.lionsshade.com/' target='_blank'>
           <img src={BrandLogo} alt="Lion's Shade" />
         </a>
       </CompanyBrand>
-      <p>Work Automation</p>
-      <About>Helping farm hobbyists manage their garden with ease</About>
-      <TechStack>{ ['Industrial Design', 'Digital Manufacturing', '3Dprint', 'CAD Modelling'] }</TechStack>
+      <p className={classes.Subtitle}>Work Automation</p>
+      <About className={classes.Title}>Helping farm hobbyists manage their garden with ease</About>
+      <TechStack>{ ['Industrial Design', 'Digital Manufacturing', 'CAD Design', '3D Printing', 'Electronics Design', 'Embedded Programming', 'C/C++'] }</TechStack>
     </Col>
     
 ))
 
 export default compose(
-  injectSheet(theme => ({
+  injectSheet(({Section, baseColor}) => ({
     FarmBotProject: {
-      '&:after': {
-        ...theme.Section.BlackLayer,
-        zIndex: 2,
-      },
+      background: 'white',
+      color: baseColor,
     }
   }))
 )( ({ classes, ...props }) => (

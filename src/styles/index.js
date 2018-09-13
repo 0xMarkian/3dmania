@@ -42,4 +42,7 @@ export default {
   ConnectSection: {
     accentColor: '#4f48ff',
   },
+  SkeletonProject: {
+    accentColor: '#00f19f',
+  },
 }
