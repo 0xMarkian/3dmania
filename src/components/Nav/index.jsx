@@ -78,9 +78,6 @@ import { FaBars } from 'react-icons/fa'
   [breakpoints.md.lt]: {
     Warning: {
       fontSize: '0.7em',
-      '& span': {
-        display: 'block',
-      }
     },
   },
 }))
@@ -106,8 +103,10 @@ class Nav extends React.Component {
 
     const NavWrapperClassName = isNavbarOpen ? classes.NavWrapperOpen : classes.NavWrapper
 
-    const sectionIds = sections.map(section => section.id)
     
+    const availableSections = sections.filter(section => !section.navLinkHidden)
+
+    const availableSectionsIds = availableSections.map(section => section.id)
 
     return (<div className={NavWrapperClassName}>
       <nav className={classes.Nav}>
@@ -116,12 +115,12 @@ class Nav extends React.Component {
         <Collapse isOpen={isNavbarOpen} className={classes.NavLinksWrapper}>
           <Scrollspy
             offset={-20}
-            items={sectionIds}
+            items={availableSectionsIds}
             currentClassName={classes.NavLinkActive}
             componentTag='div'
           >
             {
-              sections.map(({id, name}) => (
+              availableSections.map(({id, name}) => (
                 <AnchorLink
                   onClick={this.closeNavbar}
                   href={'#'+id}
@@ -136,8 +135,8 @@ class Nav extends React.Component {
         </Collapse>
       </nav>
       <span className={classes.Warning}>
-        <span>Site under development. </span>
-        <span>Please don't judge strictly =)</span>
+        Site under development.
+        Please don't judge strictly =)
       </span>
     </div>)
   }

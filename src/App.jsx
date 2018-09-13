@@ -31,6 +31,7 @@ class App extends React.Component {
       {
         id: 'header-section',
         name: 'Header',
+        navLinkHidden: true,
         Component: Header,
       },
       {
