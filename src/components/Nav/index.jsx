@@ -77,6 +77,7 @@ import { FaBars } from 'react-icons/fa'
   },
   [breakpoints.md.lt]: {
     Warning: {
+      fontSize: '0.7em',
       '& span': {
         display: 'block',
       }
