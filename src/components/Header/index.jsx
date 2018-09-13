@@ -1,6 +1,13 @@
 import {Container, Row, Col} from 'reactstrap'
+import ScrollAnimation from 'react-animate-on-scroll'
 
-const { } = commonStyles
+const AnimatedLine = ({wrapper, queueNumber, children}) => (
+    <ScrollAnimation
+      animateIn="fadeInUp"
+      animateOnce={true}
+      delay={queueNumber*250}
+      scrollableParentSelector={'.' + wrapper}
+    >{ children }</ScrollAnimation>)
 
 export default compose(injectSheet(({defaultSection, breakpoints, highlightedColor}) => ({
   SectionWrapper: {
@@ -67,9 +74,9 @@ export default compose(injectSheet(({defaultSection, breakpoints, highlightedCol
         <Row>
           <Col>
             <h1 className={classes.Heading}>
-              We<br/>
-              <span className={classes.HighlightedText}>make </span>
-              dreams <br/>reality
+              <AnimatedLine wrapper={classes.SectionWrapper} queueNumber={0}>We</AnimatedLine>
+              <AnimatedLine wrapper={classes.SectionWrapper} queueNumber={1}>make</AnimatedLine>
+              <AnimatedLine wrapper={classes.SectionWrapper} queueNumber={2}>dreams reality</AnimatedLine>
             </h1>
           </Col>
         </Row>
