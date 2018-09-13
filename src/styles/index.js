@@ -43,6 +43,6 @@ export default {
     accentColor: '#4f48ff',
   },
   SkeletonProject: {
-    accentColor: '#00f19f',
+    accentColor: '#00b1ff',
   },
 }

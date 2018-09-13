@@ -53,6 +53,7 @@ const TextSection = injectSheet(({breakpoints, highlightedColor}) => ({
   Subtitle: {
     fontSize: '2em',
     color: highlightedColor,
+    margin: '5% 0 0 0',
   },
   [breakpoints.md.lt]: {
     Subtitle: {

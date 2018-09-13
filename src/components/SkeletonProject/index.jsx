@@ -25,11 +25,8 @@ export default compose(
         backgroundPositionX: '25%',
       },
     },
-    [breakpoints.md.gt]: {
-      Wrapper: {
-        float: 'right',
-        textAlign: 'right',
-      },
+    BrandLogo: {
+      marginBottom: '5%',
     },
     NoBr: {
       whiteSpace: 'nowrap'
@@ -38,9 +35,9 @@ export default compose(
 )( ({ classes, theme, ...props }) => (
   <Section {...props} className={classes.SkeletonProject}>
     <div className={classes.Wrapper}>
-      <CompanyBrand>Modigliani</CompanyBrand>
-      <About>Bringing <AccentExp color={theme.SkeletonProject.accentColor}>anatomically correct</AccentExp> human skeleton to <span className={classes.NoBr}>artist aid</span></About>
-      <TechStack>{['Education', 'Digital Sculpting', '3dprint']}</TechStack>
+      <CompanyBrand><div className={classes.BrandLogo}>Modigliani</div></CompanyBrand>
+      <About className={classes.Title}>Bringing <AccentExp color={theme.SkeletonProject.accentColor}>anatomically correct</AccentExp> human skeleton to <span className={classes.NoBr}>artist aid</span></About>
+      <AccentExp color={theme.SkeletonProject.accentColor}><TechStack>{['Education', 'Digital Sculpting', '3dprint']}</TechStack></AccentExp>
     </div>
   </Section>
 ))
