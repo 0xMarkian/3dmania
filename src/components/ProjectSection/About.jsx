@@ -11,7 +11,7 @@ export default compose(
     },
     [breakpoints.md.lt]: {
       About: {
-        margin: '1em 0',
+        margin: '0',
         fontSize: '1.8em',
       },
     },
