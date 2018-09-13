@@ -20,6 +20,11 @@ export default compose(
     Wrapper: {
       maxWidth: '700px',
     },
+    [breakpoints.md.lt]: {
+      SkeletonProject: {
+        backgroundPositionX: '25%',
+      },
+    },
     [breakpoints.md.gt]: {
       Wrapper: {
         float: 'right',
