@@ -5,7 +5,7 @@ const AnimatedLine = ({wrapper, queueNumber, children}) => (
     <ScrollAnimation
       animateIn="fadeInUp"
       animateOnce={true}
-      delay={queueNumber*250}
+      delay={queueNumber*500}
       scrollableParentSelector={'.' + wrapper}
     >{ children }</ScrollAnimation>)
 
@@ -26,6 +26,7 @@ export default compose(injectSheet(({defaultSection, breakpoints, highlightedCol
   Description: {
     color: '#bbb',
     marginTop: '2em',
+    padding: '0 15px',
   },
   PartnersWrapper: {
     display: 'flex',
@@ -80,9 +81,13 @@ export default compose(injectSheet(({defaultSection, breakpoints, highlightedCol
             </h1>
           </Col>
         </Row>
-        <p className={classes.Description}>
-          3dmania helps young startups, businesses and just curious people create solutions, utilizing most advanced Digital Manufacturing and IT technologies. Agile Product Development & Rapid prototyping 
-        </p>
+        <Row>
+          <AnimatedLine wrapper={classes.SectionWrapper} queueNumber={3}>
+            <p className={classes.Description}>
+              3dmania helps young startups, businesses and just curious people create solutions, utilizing most advanced Digital Manufacturing and IT technologies. Agile Product Development & Rapid prototyping 
+            </p>
+          </AnimatedLine>
+        </Row>
       </Container>
     </header>
   )
