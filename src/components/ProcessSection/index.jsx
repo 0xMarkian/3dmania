@@ -47,6 +47,7 @@ const Delivery = () => {
 
 export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) => ({
   ProcessSection: {
+    minHeight: '100vh',
     background: 'white',
     paddingTop: '5%',
     color: baseColor,

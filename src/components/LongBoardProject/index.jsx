@@ -7,6 +7,7 @@ import BackgroundPhoto from './background.jpg'
 export default compose(
   injectSheet(({Section, LongBoardProject: LongBoardProjectStyles, breakpoints}) => ({
     LongBoardProject: {
+      minHeight: '110vh',
       backgroundImage: `url(${ BackgroundPhoto })`,
       backgroundPosition: 'center',
       color: LongBoardProjectStyles.accentColor,

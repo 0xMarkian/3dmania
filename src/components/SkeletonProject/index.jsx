@@ -9,6 +9,7 @@ import BackgroundPhoto from './background.jpg'
 export default compose(
   injectSheet(({Section, SkeletonProject: SkeletonProjectStyles, breakpoints}) => ({
     SkeletonProject: {
+      minHeight: '110vh',
       backgroundImage: `url(${ BackgroundPhoto })`,
       backgroundPosition: 'center 20%',
       color: 'white',
