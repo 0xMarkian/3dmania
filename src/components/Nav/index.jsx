@@ -37,6 +37,9 @@ import { FaBars } from 'react-icons/fa'
       color: 'white',
     },
   },
+  NavLinkHidden: {
+    display: 'none',
+  },
   NavLinkActive: {
     fontWeight: 500,
     color: 'white',
@@ -104,9 +107,9 @@ class Nav extends React.Component {
     const NavWrapperClassName = isNavbarOpen ? classes.NavWrapperOpen : classes.NavWrapper
 
     
-    const availableSections = sections.filter(section => !section.navLinkHidden)
+    // const availableSections = sections.filter(section => !section.navLinkHidden)
 
-    const availableSectionsIds = availableSections.map(section => section.id)
+    const availableSectionsIds = sections.map(section => section.id)
 
     return (<div className={NavWrapperClassName}>
       <nav className={classes.Nav}>
@@ -120,12 +123,12 @@ class Nav extends React.Component {
             componentTag='div'
           >
             {
-              availableSections.map(({id, name}) => (
+              sections.map(({id, name, navLinkHidden}) => (
                 <AnchorLink
                   onClick={this.closeNavbar}
                   href={'#'+id}
                   key={id}
-                  className={classes.NavLink}
+                  className={navLinkHidden ? classes.NavLinkHidden : classes.NavLink}
                 >
                   {name}
                 </AnchorLink>
