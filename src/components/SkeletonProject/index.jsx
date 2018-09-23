@@ -1,5 +1,5 @@
 import Section from '../Section'
-import { CompanyBrand, TechStack, About } from '../ProjectSection'
+import { CompanyBrand, TechStack, DiscoverMore, About } from '../ProjectSection'
 import AccentExp from 'components/AccentExp'
 
 import { Row, Col } from 'reactstrap'
@@ -39,6 +39,7 @@ export default compose(
       <CompanyBrand><div className={classes.BrandLogo}>Modigliani</div></CompanyBrand>
       <About className={classes.Title}>Bringing <AccentExp color={theme.SkeletonProject.accentColor}>anatomically correct</AccentExp> human skeleton to <span className={classes.NoBr}>artist aid</span></About>
       <AccentExp color={theme.SkeletonProject.accentColor}><TechStack>{['Education', 'Digital Sculpting', '3dprint']}</TechStack></AccentExp>
+      <DiscoverMore href='#' color={theme.SkeletonProject.accentColor}/>
     </div>
   </Section>
 ))

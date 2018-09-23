@@ -1,5 +1,5 @@
 import Section from '../Section'
-import { CompanyBrand, TechStack, About } from '../ProjectSection'
+import { CompanyBrand, TechStack, DiscoverMore, About } from '../ProjectSection'
 import AccentExp from 'components/AccentExp'
 
 import BackgroundPhoto from './background.jpg'
@@ -34,6 +34,7 @@ export default compose(
       <CompanyBrand>Young Startup Team</CompanyBrand>
       <About>Building first <AccentExp color={theme.secondAccentColor}>electro board </AccentExp>with innovative batteries</About>
       <TechStack>{ ['Industrial Design', 'Digital Manufacturing', '3Dprint', 'CAD Modelling'] }</TechStack>
+      <DiscoverMore href='#' color={theme.LongBoardProject.accentColor}/>
     </div>
   </Section>
 ))

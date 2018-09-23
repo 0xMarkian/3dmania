@@ -1,5 +1,5 @@
 import Section from '../Section'
-import { CompanyBrand, TechStack, About } from '../ProjectSection'
+import { CompanyBrand, TechStack, DiscoverMore, About } from '../ProjectSection'
 import AccentExp from 'components/AccentExp'
 
 import { Row, Col } from 'reactstrap'
@@ -36,7 +36,7 @@ const PhotoSection = compose(
   <Col className={classes.PhotoSection} md={6}>
     <img className={`${ classes.underImages } ${classes.img3}`} src={img3}/>
     <img className={`${ classes.underImages } ${classes.img2}`} src={img2}/>
-    <img className={classes.img1} src={img1}/> 
+    <img className={classes.img1} src={img1}/>
   </Col>
 ))
 
@@ -63,7 +63,7 @@ const TextSection = injectSheet(({breakpoints, highlightedColor}) => ({
   Title: {
     fontSize: '2.4em',
   },
-}))( ({ classes }) => (
+}))( ({ classes, theme }) => (
     <Col className={classes.TextSection} md={6}>
       <CompanyBrand>
         <a className={classes.BrandLogoLink} href='http://www.lionsshade.com/' target='_blank'>
@@ -73,6 +73,7 @@ const TextSection = injectSheet(({breakpoints, highlightedColor}) => ({
       <p className={classes.Subtitle}>Work Automation</p>
       <About className={classes.Title}>Helping farm hobbyists manage their garden with ease</About>
       <TechStack>{ ['Industrial Design', 'Digital Manufacturing', 'CAD Design', '3D Printing', 'Electronics Design', 'Embedded Programming', 'C/C++'] }</TechStack>
+      <DiscoverMore href='#' color={theme.baseColor}/>
     </Col>
     
 ))
