@@ -108,9 +108,11 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
       <h4 className={classes.Subtitle}>Process</h4>
       <h3 className={classes.Title}>
         We are living practitioners of the good principles of Agile methodology. 
-        But most importantly - we know how to adapt to always changing circumstances. 
+        {
+        /* But most importantly - we know how to adapt to always changing circumstances. 
         So in order to deliver the <AccentExp color={theme.highlightedColor}>best results possible</AccentExp>,<br/>
-        we are very flexible to our client's needs.
+        we are very flexible to our client's needs. */
+        }
       </h3>
       <Row className={classes.StepsContainer}>{
         [Idea, Agreement, Development, Testing, Delivery].map((Item, i) =>
