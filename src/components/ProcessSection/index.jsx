@@ -2,6 +2,7 @@ import {Row, Col} from 'reactstrap'
 
 import Section from 'components/Section'
 import { FullStep, DualStep, SubStep, DescContent as StepDesc } from './Step'
+import AccentExp from 'components/AccentExp'
 
 
 const Idea = () => (
@@ -23,10 +24,18 @@ const Development = () => {
           <span>Digital Manufacturing <br/>
             - CAD Design <br/>
             - 3Dprint <br/>
-          Electronics Design</span>
+            - Electronics Design<br/>
+            - Embedded Programming <br/>
+          </span>
         </StepDesc>
       </DualStep>
-      <DualStep title='Software'/>
+      <DualStep title='Software'>
+        <StepDesc>
+          <span>
+            - Brain of the system<br/>
+          </span>
+        </StepDesc>
+      </DualStep>
     </div>
   )
 }
@@ -53,8 +62,8 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
     color: baseColor,
   },
   Title: {
-    display: 'none',
-    margin: '1em 0',
+    lineHeight: '1.5em',
+    margin: '2em 0',
     fontWeight: 'bold',
   },
   HighlightedText: {
@@ -74,7 +83,7 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
       paddingTop: '10%',
     },
     Title: {
-      textAlign: 'center',
+      fontSize: '0.9em',
     },
     Subtitle: {
       textAlign: 'center',
@@ -92,18 +101,17 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
       alignItems: 'center',
     },
   },
-  NoBr: {
-    whiteSpace: 'nowrap',
-  },
 })))(
-  ({ classes }) => {
+  ({ classes, theme }) => {
 
     return (<Section className={classes.ProcessSection} id='process-section'>
       <h4 className={classes.Subtitle}>Process</h4>
-      <h1 className={classes.Title}>Introducing Triage, <span className={classes.NoBr}>our method of</span>
-        <br/>
-        <span className={classes.HighlightedText}>ensuring the work really works.</span>
-      </h1>
+      <h3 className={classes.Title}>
+        We are living practitioners of the good principles of Agile methodology. 
+        But most importantly - we know how to adapt to always changing circumstances. 
+        So in order to deliver the <AccentExp color={theme.highlightedColor}>best results possible</AccentExp>,<br/>
+        we are very flexible to our client's needs.
+      </h3>
       <Row className={classes.StepsContainer}>{
         [Idea, Agreement, Development, Testing, Delivery].map((Item, i) =>
           <Col

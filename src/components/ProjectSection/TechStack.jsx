@@ -11,6 +11,7 @@ export default compose(
       fontSize: '1em',
     },
     Wrapper: {
+      lineHeight: '32px',
       width: '100%',
     },
     [breakpoints.md.lt]: {
