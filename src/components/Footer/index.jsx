@@ -55,19 +55,8 @@ export default compose(injectSheet(({defaultSection, breakpoints}) => ({
   SocialWrapper: {
     marginTop: '2%',
   },
-  LegalWrapper: {
-    marginTop: '2%',
-  },
   SocialIcon: {
     extend: 'BaseLink',
-  },
-  LegalLink: {
-    extend: 'BaseLink',
-    marginTop: '5%',
-    fontSize: '0.7em',
-    '&:not(:first-child)': {
-      marginLeft: '2em',
-    }
   },
   [breakpoints.md.lt]: {
     SocialWrapper: {
@@ -95,8 +84,8 @@ export default compose(injectSheet(({defaultSection, breakpoints}) => ({
       {
         title: 'New business enquiries',
         links: [{
-          url: 'mailto:3dmania.print@gmail.com',
-          text: '3dmania.print@gmail.com',
+          url: 'mailto:sales@3dmania.tech',
+          text: 'sales@3dmania.tech',
         },
         {
           url: 'tel:+380689212475',
@@ -137,13 +126,6 @@ export default compose(injectSheet(({defaultSection, breakpoints}) => ({
                 >{<Icon />}</a>
               ))
             }
-          </Col>
-        </Row>
-        <Row className={classes.LegalWrapper}>
-          <Col md={12}>
-            <a className={classes.LegalLink}>Terms & Conditions</a>
-            <a className={classes.LegalLink}>Cookie Policy</a>
-            <a className={classes.LegalLink}>Privacy Policy</a>
           </Col>
         </Row>
       </Container>
