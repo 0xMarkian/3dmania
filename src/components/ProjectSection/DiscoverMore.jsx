@@ -14,23 +14,22 @@ export default compose(
         position: 'absolute',
         left: 0,
         width: '100%',
-        height: '3px',
+        height: '2px',
         background: ({color}) => color,
-        transition: 'all 0.5s ease',
+        transition: 'all 0.5s cubic-bezier(.34,.325,.16,1)',
       },
     },
     [breakpoints.md.lt]: {
       Button: {
-        '&:after': {top: '1.5em'},
+        '&:after': {bottom: '-.5em'},
       },
     },
     [breakpoints.md.gt]: {
       Button: {
-        height: 'calc(3em + 3px)',
-        '&:after': {top: '3em'},
+        '&:after': {bottom: '-1.5em'},
         '&:hover': {
           color: ({color}) => color,
-          '&:after': {top: '1.5em'},
+          '&:after': {bottom: '-.5em'},
         },
       },
     },
