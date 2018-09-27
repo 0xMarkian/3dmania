@@ -64,11 +64,11 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
   },
   Title: {
     fontSize: '47px',
-    fontWeight: 'bold',
     lineHeight: '1.5em',
-    padding: '.66em',
     textAlign: 'center',
+    fontWeight: 'bold',
     margin: '1em 0',
+    padding: '.66em',
   },
   HighlightedText: {
     color: highlightedColor,
@@ -87,7 +87,7 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
       paddingTop: '10%',
     },
     Title: {
-      fontSize: '0.9em',
+      fontSize: '1em',
     },
     Subtitle: {
       textAlign: 'center',
