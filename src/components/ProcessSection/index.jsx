@@ -21,10 +21,11 @@ const Development = () => {
     <div>
       <DualStep title='Hardware'>
         <StepDesc>
-          <span>Digital Manufacturing <br/>
+          <span>
+            Digital Manufacturing <br/>
             - CAD Design <br/>
             - 3Dprint <br/>
-            - Electronics Design<br/>
+            Electronics Design<br/>
             - Embedded Programming <br/>
           </span>
         </StepDesc>
@@ -32,7 +33,7 @@ const Development = () => {
       <DualStep title='Software'>
         <StepDesc>
           <span>
-            - Brain of the system<br/>
+            Brain of the system<br/>
           </span>
         </StepDesc>
       </DualStep>
@@ -62,9 +63,12 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
     color: baseColor,
   },
   Title: {
-    lineHeight: '1.5em',
-    margin: '2em 0',
+    fontSize: '47px',
     fontWeight: 'bold',
+    lineHeight: '1.5em',
+    padding: '.66em',
+    textAlign: 'center',
+    margin: '1em 0',
   },
   HighlightedText: {
     color: highlightedColor,
@@ -106,14 +110,7 @@ export default compose(injectSheet(({baseColor, highlightedColor, breakpoints}) 
 
     return (<Section className={classes.ProcessSection} id='process-section'>
       <h4 className={classes.Subtitle}>Process</h4>
-      <h3 className={classes.Title}>
-        We are living practitioners of the good principles of Agile methodology. 
-        {
-        /* But most importantly - we know how to adapt to always changing circumstances. 
-        So in order to deliver the <AccentExp color={theme.highlightedColor}>best results possible</AccentExp>,<br/>
-        we are very flexible to our client's needs. */
-        }
-      </h3>
+      <h3 className={classes.Title}>We are living practitioners of the good principles of <AccentExp color={theme.highlightedColor}>Agile</AccentExp> methodology.</h3>
       <Row className={classes.StepsContainer}>{
         [Idea, Agreement, Development, Testing, Delivery].map((Item, i) =>
           <Col
