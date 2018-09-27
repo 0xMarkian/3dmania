@@ -23,7 +23,7 @@ export default compose(
     },
     [breakpoints.md.lt]: {
       SkeletonProject: {
-        backgroundPositionX: '25%',
+        backgroundPositionX: '60%',
       },
     },
     BrandLogo: {
