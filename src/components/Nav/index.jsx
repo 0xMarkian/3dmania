@@ -112,6 +112,10 @@ class Nav extends React.Component {
     const availableSectionsIds = sections.map(section => section.id)
 
     return (<div className={NavWrapperClassName}>
+      <span className={classes.Warning}>
+        Site under development.
+        Please don't judge strictly =)
+      </span>
       <nav className={classes.Nav}>
         <h1 className={classes.BrandTitle}>3D Mania</h1>
         <a className={classes.HamburgerIcon} onClick={this.toggleNavbar}><FaBars /></a>
@@ -137,10 +141,6 @@ class Nav extends React.Component {
           </Scrollspy>
         </Collapse>
       </nav>
-      <span className={classes.Warning}>
-        Site under development.
-        Please don't judge strictly =)
-      </span>
     </div>)
   }
 }
