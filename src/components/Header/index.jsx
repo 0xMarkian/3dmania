@@ -86,7 +86,7 @@ export default compose(injectSheet(({defaultSection, breakpoints, highlightedCol
         <Row>
           <AnimatedLine wrapper={classes.SectionWrapper} queueNumber={3}>
             <p className={classes.Description}>
-              Agile Product Development & Rapid prototyping → We will gently guide you through the process of creating your dream!
+              3dmania helps young startups, businesses and just curious people create solutions, utilizing most advanced Digital Manufacturing and IT technologies. We will gently guide you through the process of creating your dream!
             </p>
           </AnimatedLine>
         </Row>
