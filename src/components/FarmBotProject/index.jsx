@@ -60,9 +60,6 @@ const TextSection = injectSheet(({breakpoints, highlightedColor}) => ({
       fontSize: '1em',
     },
   },
-  Title: {
-    fontSize: '2.4em',
-  },
 }))( ({ classes, theme }) => (
     <Col className={classes.TextSection} md={6}>
       <CompanyBrand>
@@ -71,8 +68,8 @@ const TextSection = injectSheet(({breakpoints, highlightedColor}) => ({
         </a>
       </CompanyBrand>
       <p className={classes.Subtitle}>Work Automation</p>
-      <About className={classes.Title}>Helping farm hobbyists manage their garden with ease</About>
-      <TechStack>{ ['Industrial Design', 'Digital Manufacturing', '3D Printing', 'Electronics Design', 'Embedded Programming'] }</TechStack>
+      <About>Helping farm hobbyists manage their garden with ease</About>
+      <TechStack splitAfter={1}>{ ['Industrial Design', 'Digital Manufacturing', '3D Printing', 'Electronics Design', 'Embedded Programming'] }</TechStack>
       <DiscoverMore href='#' color={theme.baseColor}/>
     </Col>
     

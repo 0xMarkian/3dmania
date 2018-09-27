@@ -1,17 +1,23 @@
+import { Fragment } from 'react'
 export default compose(
   injectSheet(({breakpoints}) => ({
+    NoLeftBorder: {
+      paddingLeft: '0!important',
+    },
+    NoRightBorder: {
+      paddingRight: '0!important',
+      borderRight: 'none!important',
+    },
     Element: {
-      '&:not(:first-child)': {
-        paddingLeft: '3%',
-      },
-      '&:not(:last-child)': {
-        paddingRight: '3%',
-        borderRight: '1px solid',
-      },
+      lineHeight: '1.3em',
+      borderRight: '1px solid',
+      padding: '0 3%',
+      display: 'inline-block',
       fontSize: '1em',
     },
     Wrapper: {
       lineHeight: '32px',
+      whiteSpace: 'nowrap',
       width: '100%',
     },
     [breakpoints.md.lt]: {
@@ -21,12 +27,37 @@ export default compose(
         border: 'none!important',
         display: 'block',
       },
+      Wrapper: {
+        '& br': {
+          display: 'none',
+        },
+      }
+    },
+    [breakpoints.md.gt]: {
+      Element: {
+        marginBottom: '.5em',
+      },
     },
   }))
-)( ({ classes, children }) => {
+)( ({ classes, splitAfter, children }) => {
   return (
     <div className={classes.Wrapper}>
-      { children.map( (child, key) => <span key={key} className={classes.Element}>{ child }</span>) }
-    </div>
+      {children.map( (child, key, {length: stackSize}) => {
+        const firstInLine = key === 0 || key === (splitAfter+1)
+        const lastInLine = key === splitAfter || key === (stackSize-1)
+
+        let classesList = [classes.Element]
+        if(firstInLine) classesList.push(classes.NoLeftBorder)
+        if(lastInLine) classesList.push(classes.NoRightBorder)
+        const classNames = classesList.join(' ')
+
+        return (
+          <Fragment key={key}>
+            <span className={classNames}>{ child }</span>
+            {lastInLine && <br/>}
+          </Fragment>
+        )
+      })}
+      </div>
   )
 })

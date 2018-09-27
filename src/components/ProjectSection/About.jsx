@@ -17,5 +17,5 @@ export default compose(
     },
   }))
 )( ({ classes, children }) => (
- <h2 className={classes.About}>{ children }</h2> 
+  <h2 className={classes.About}>{ children }</h2>
 ))
